@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>calculadora</title>
+    <link rel = "stylesheet" href = "css/style.css" />
+    <script src = "js/script.js" defer></script>
+  </head>
+  <body>
+    <h1>calculadora</h1>
+
+    <h3 id = "result"></h3>
+
+    <div class = "calculator-container">
+      <div class = "calculator-inputs">
+        <input id = "operator_1" type = "number" placeholder = "operator 1" autofocus onfocus = "this.select()" />
+        <input id = "operator_2" type = "number" placeholder = "operator 2" onfocus = "this.select()" />
+      </div>
+      <div id = "buttons-container" class = "calculator-buttons">
+        <div class = "basic-calculator-buttons">
+          <button id = "sum">➕</button>
+          <button id = "sub">➖</button>
+          <button id = "mul">✖️</button>
+          <button id = "div">➗</button>
+        </div>
+        <div class = "advanced-calculator-buttons">
+          <button id = "sqrt"><strong>√</strong></button>
+          <button id = "pow"><strong>^</strong></button>
+          <button id = "abs"><strong>abs</strong></button>
+        </div>
+        <button id = "clear"><strong>C</strong></button>
+      </div>
+    </div>
+  </body>
+</html>

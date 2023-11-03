@@ -1,0 +1,116 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  cursor: default;
+}
+
+::selection {
+  color: #1a1a1a;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-shadow: 3px 3px 4px #838383;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 80px;
+}
+
+h1::selection, h3::selection {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+input[type="number"] {
+  width: 90px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+  cursor: text;
+  font-weight: bold;
+  background-color: #d4d4d4;
+  transition: ease 0.5s;
+}
+
+input[type="number"]:not(:placeholder-shown) {
+  background-color: #1a1a1a;
+  color: #ff9f0a;
+  font-weight: bold;
+  transition: ease 0.5s;
+}
+
+input[type="number"]::placeholder {
+  font-weight: normal;
+  text-transform: uppercase;
+  background-color: rgb(212, 212, 212);
+}
+
+input[type="number"]:focus {
+  outline: none;
+}
+
+.calculator-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.basic-calculator-buttons button, .advanced-calculator-buttons button, #clear {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1.2em;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.basic-calculator-buttons button {
+  background-color: #2ac98c;
+  color: #fff;
+}
+
+.basic-calculator-buttons button:hover {
+  background-color: #3fa784;
+}
+
+.advanced-calculator-buttons button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.advanced-calculator-buttons button:hover {
+  background-color: #2980b9;
+}
+
+#clear {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 8px;
+}
+
+#clear:hover {
+  background-color: #c0392b;
+}
+
+strong {
+  cursor: pointer;
+}

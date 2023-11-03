@@ -1,0 +1,72 @@
+<!--
+  @file: index.html
+  @author: Christian Millán Soria
+  @created: 02/10/2023
+  @license: MIT
+  @contact: christiaanmillaan1313@gmail.com
+  @info: distintos scripts con "alerts"
+-->
+
+<!DOCTYPE html>
+  <html lang = "en">
+    <head>
+      <meta charset = "utf-8" />
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+      <title>03 - proyecto alert</title>
+      <link rel = "stylesheet" href = "css/style.css" />
+    </head>
+    <body>
+      <div id = "container">
+        <div id = "header">
+          <h1>Ejemplos – FUNDAMENTOS DE JS (ES6)</h1>
+          <h2>Desarrollo WEB en entorno cliente</h2>
+        </div>
+
+        <!-- ---------------------------------------------------------------------------------- -->
+
+        <div id = "content">
+          <ul>
+            <li>
+              <strong>ejem01</strong>
+              Muestra una alerta. Usamos la etiqueta "script" dentro del .html
+              <br /><a id = "ejem01" href = "./ejemplos/ejem01/index.html">&gt;&gt; Solución</a>
+            </li>
+
+            <li>
+              <strong>ejem02</strong>
+              Muestra una alerta. Usamos la etiqueta "script" para referenciar al .js
+              <br /><a id = "ejem02" href = "./ejemplos/ejem02/index.html">&gt;&gt; Solución</a>
+            </li>
+
+            <li>
+              <strong>ejem03</strong>
+              Muestra una alerta gestionando un evento con "onclick". Código en la propia etiqueta
+              <br /><a id = "ejem03" href = "./ejemplos/ejem03/index.html">&gt;&gt; Solución</a>
+            </li>
+
+            <li>
+              <strong>ejem04</strong>
+              Muestra una alerta gestionando un evento con "onclick". Función en un archivo .js
+              <br /><a id = "ejem04" href = "./ejemplos/ejem04/index.html">&gt;&gt; Solución</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- ---------------------------------------------------------------------------------- -->
+
+        <div id = "footer">
+          © Luis José Sánchez González & Jota Pe Mayo ☺
+        </div>
+      </div>
+
+      <!-- ----------------------------------------------------------------------------------------------------- -->
+
+      <!-- ejem01 -->
+      <script>
+        document.getElementById('ejem01').onclick = function alert1() {
+          alert('Este es mi primer script');
+        }
+      </script>
+    </body>
+  </html>

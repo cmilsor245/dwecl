@@ -1,0 +1,209 @@
+<!--
+  @file: index.html
+  @author: Christian Millán Soria
+  @created: 17/10/2023
+  @license: MIT
+  @contact: christiaanmillaan1313@gmail.com
+  @info: trabajo sobre preguntas con temporizador
+-->
+
+<!DOCTYPE html>
+  <html lang = "en">
+    <head>
+      <meta charset = "utf-8" />
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+      <title>preguntas con tiempo</title>
+      <link rel = "stylesheet" href = "css/style.css" />
+      <script src = "js/script.js" defer></script>
+    </head>
+    <body>
+      <form>
+        <fieldset id = "questions-box">
+          <legend>preguntas</legend>
+          <div id = "timer">
+            <p id = "time-paragraph"></p>
+          </div>
+
+          <!-- ------------------------------------------------- -->
+
+          <div id = "questions">
+            <div id = "question1">
+              <h3>1. ¿qué palabra clave se utiliza para declarar una variable en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question1answer" value = "1" /> var
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question1answer" value = "2" /> let <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question1answer" value = "3" /> const
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question2">
+              <h3>2. ¿cuál es el operador de igualdad estricta en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question2answer" value = "1" /> ==
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question2answer" value = "2" /> === <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question2answer" value = "3" /> =
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question3">
+              <h3>3. ¿qué método se utiliza para agregar un elemento al final de un array en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question3answer" value = "1" /> push() <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question3answer" value = "2" /> pop()
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question3answer" value = "3" /> unshift()
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question4">
+              <h3>4. ¿cuál es la forma correcta de comentar una línea en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question4answer" value = "1" /> /* comentario */
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question4answer" value = "2" /> // comentario <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question4answer" value = "3" /> &lt;!-- comentario --&gt;
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question5">
+              <h3>5. ¿cuál de las siguientes no es una estructura de control en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question5answer" value = "1" /> if
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question5answer" value = "2" /> repeat <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question5answer" value = "3" /> for
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question6">
+              <h3>6. ¿qué método se utiliza para eliminar un elemento de un array en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question6answer" value = "1" /> remove()
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question6answer" value = "2" /> splice() <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question6answer" value = "3" /> cut()
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question7">
+              <h3>7. ¿cuál de las siguientes no es una variable global en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question7answer" value = "1" /> window
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question7answer" value = "2" /> document
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question7answer" value = "3" /> global <!-- correct -->
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question8">
+              <h3>8. ¿cuál es la función que se utiliza para convertir una cadena a un número en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question8answer" value = "1" /> toNumber()
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question8answer" value = "2" /> parseInt() <!-- correct -->
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question8answer" value = "3" /> parseNumber()
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question9">
+              <h3>9. ¿qué ciclo se utiliza para iterar sobre propiedades de un objeto en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question9answer" value = "1" /> for
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question9answer" value = "2" /> while
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question9answer" value = "3" /> for...in <!-- correct -->
+              </label>
+            </div>
+
+            <!-- ------------------------------------------------------------------------------- -->
+
+            <div id = "question10">
+              <h3>10. ¿cuál es la forma correcta de declarar una función en javascript?</h3>
+              <label>
+                <input type = "radio" name = "question10answer" value = "1" /> function myFunction {}
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question10answer" value = "2" /> def myFunction() {}
+              </label>
+              <br />
+              <label>
+                <input type = "radio" name = "question10answer" value = "3" /> function myFunction() {} <!-- correct -->
+              </label>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------ -->
+
+          <br />
+          <div id = "buttons">
+            <input id = "submit-button" type = "submit" value = "submit" />
+            <input id = "reset-button" type = "reset" value = "reset" />
+          </div>
+        </fieldset>
+      </form>
+    </body>
+  </html>

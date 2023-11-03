@@ -1,0 +1,45 @@
+<!--
+  @file: index.html
+  @author: Christian Millán Soria
+  @created: 09/10/2023
+  @license: MIT
+  @contact: christiaanmillaan1313@gmail.com
+  @info: se ingresa una edad y se responde a unas preguntas según la misma
+-->
+
+<!DOCTYPE html>
+  <html lang = "en">
+    <head>
+      <meta charset = "utf-8" />
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+      <title>comprobación de edad</title>
+      <script src = "js/script.js"></script>
+    </head>
+    <body>
+      <form>
+        <label for = "edad">ingrese su edad: <input id = "edad" name = "edad" type = "text" min = "0" required /></label>
+        <input type = "submit" value = "submit" onclick = "resultado(event)" />
+      </form>
+
+      <!-- --------------------------------------------------------- -->
+
+      <br />
+
+      <div>
+        <div>
+          <h3>¿puede beber alcohol? (solo para mayores de 18 años)</h3>
+          <p id = "alcohol">---</p>
+        </div>
+
+        <div>
+          <h3>¿puede ingresar a la fiesta? (solo para &ge; 18 y &le; 30)</h3>
+          <p id = "fiesta">---</p>
+        </div>
+
+        <div>
+          <h3>¿tiene entrada gratis? (solo para &ge; 20 y &le; 25)</h3>
+          <p id = "gratis">---</p>
+        </div>
+      </div>
+    </body>
+  </html>
