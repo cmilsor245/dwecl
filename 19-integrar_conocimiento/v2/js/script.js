@@ -71,6 +71,6 @@ function displayResult(job, result) {
   if (result.error) {
     ANSWER.innerHTML = `el trabajo de "<span class = "incorrect-job">${job}</span>" no está contemplado en nuestra base de datos`;
   } else {
-    ANSWER.innerHTML = `el salario del puesto de trabajo de <span class = "correct-job">$${job}</span> es de ${result.salary} €`;
+    ANSWER.innerHTML = `el salario del puesto de trabajo de <span class = "correct-job">${job}</span> es de ${result.salary} €`;
   }
 }
