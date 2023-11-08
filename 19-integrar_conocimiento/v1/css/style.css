@@ -17,7 +17,7 @@ form {
   text-align: center;
 }
 
-input[type="text"] {
+input[type = "text"] {
   font-size: 18px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -27,12 +27,12 @@ input[type="text"] {
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-input[type="text"]:focus {
+input[type = "text"]:focus {
   border-color: #ff9100;
   background-color: #f3f3f3;
 }
 
-input[type="submit"] {
+input[type = "submit"] {
   background: #3a3a3a;
   color: white;
   font-size: 18px;
@@ -43,7 +43,7 @@ input[type="submit"] {
   transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
-input[type="submit"]:hover {
+input[type = "submit"]:hover {
   background: #ff0055;
   border: 1px solid black;
   transform: scale(1.03);
