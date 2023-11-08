@@ -44,13 +44,13 @@ function checkJobSalary(job) {
     { job: "back", salary: 50000 },
   ];
 
-  let jobSalary = jobSalaries.filter((jobSalary) => jobSalary.job === job.toLowerCase());
+  let jobSalary = jobSalaries.find((jobSalary) => jobSalary.job === job.toLowerCase());
 
-  if (jobSalary.length === 0) {
+  if (!jobSalary) {
     return { salary: null, error: true };
   }
 
-  return { salary: jobSalary[0].salary, error: false };
+  return { salary: jobSalary.salary, error: false };
 }
 
 /* --------------------------------------------------- */
