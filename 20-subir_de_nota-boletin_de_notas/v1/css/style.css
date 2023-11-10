@@ -94,12 +94,6 @@ body {
   margin-left: .79%;
 }
 
-#action-buttons-container {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
 .action-button {
   width: 11.6%;
   height: 30px;
