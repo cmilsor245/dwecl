@@ -1,10 +1,11 @@
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Play', sans-serif;
   cursor: default;
 }
 
 body {
   background-color: #ececec;
+  margin-left: .9%;
 }
 
 ::selection {
@@ -24,7 +25,6 @@ body {
   color: #826494;
   font-weight: bold;
   font-size: large;
-  margin-left: .7%;
 }
 
 #form *{
@@ -77,6 +77,19 @@ body {
   color: #0f0f0f;
 }
 
-.hidden-check-button {
-  display: none;
+#grades-header {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+#grades-list {
+  color: #2400ff;
+  font-weight: bold;
+}
+
+.grades-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  margin-left: .79%;
 }
