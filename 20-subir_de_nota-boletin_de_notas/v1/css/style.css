@@ -1,0 +1,82 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: default;
+}
+
+body {
+  background-color: #ececec;
+}
+
+::selection {
+  background-color: black;
+  color: white;
+}
+
+#title {
+  text-align: right;
+  margin-right: 16%;
+  text-transform: uppercase;
+  color: #b94838;
+}
+
+#form {
+  display: flex;
+  color: #826494;
+  font-weight: bold;
+  font-size: large;
+  margin-left: .7%;
+}
+
+#form *{
+  margin: 0 5px;
+}
+
+#student-name-label {
+  text-transform: capitalize;
+}
+
+#student-name {
+  border: none;
+  border-bottom: 2px solid #826494;
+  padding: 5px;
+  border-radius: 0;
+  background: transparent;
+  color: #826494;
+  font-weight: bold;
+  font-size: large;
+  outline: none;
+  cursor: text;
+}
+
+#check-button {
+  border: none;
+  background-color: #b94838;
+  color: #fcfcfc;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: large;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+  position: relative;
+  bottom: 8px;
+}
+
+#check-button:hover {
+  background-color: #826494;
+  transform: scale(1.03);
+  transition: .5s;
+  border: 1px solid #0f0f0f;
+}
+
+#check-button:active {
+  transform: scale(0.98);
+  background-color: #81539c;
+  border: 1px solid #292929;
+  color: #0f0f0f;
+}
+
+.hidden-check-button {
+  display: none;
+}

@@ -5,9 +5,14 @@
     <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
     <title>version 1.0</title>
     <script src = "js/script.js" defer></script>
+    <link rel = "stylesheet" href = "css/style.css" />
   </head>
   <body>
-    <h2>boletín de notas</h2>
-    
+    <h2 id = "title">boletín de notas</h2>
+
+    <form id = "form">
+      <label id = "student-name-label" for = "student-name">alumno: <input type = "text" id = "student-name" autofocus onfocus = "this.select()" autocomplete = "off"></label>
+      <button id = "check-button">comprobar</button>
+    </form>
   </body>
 </html>
