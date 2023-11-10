@@ -118,3 +118,9 @@ body {
   background-color: #212186;
   color: #f8f8f8;
 }
+
+.action-button:active {
+  background-color: #000066;
+  color: #f8f8f8;
+  transform: scale(0.98);
+}
