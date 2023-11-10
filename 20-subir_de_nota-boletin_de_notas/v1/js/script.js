@@ -13,19 +13,24 @@ CHECK_BUTTON.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (checkEmptyInput()) {
-    alert("por favor, introduce un nombre válido");
+    alert("Por favor, introduce un nombre válido");
   } else {
-    removeCheckButton();
-    createGradeList();
+    changeLayout();
   }
 });
 
-function removeCheckButton() {
-  CHECK_BUTTON.remove();
-}
-
 function checkEmptyInput() {
   return STUDENT_NAME.value === "";
+}
+
+function changeLayout() {
+  removeCheckButton();
+  createGradeList();
+  createActionButtons();
+}
+
+function removeCheckButton() {
+  CHECK_BUTTON.remove();
 }
 
 function createGradeList() {
@@ -51,4 +56,38 @@ function createGradeList() {
 
   document.body.appendChild(GRADES_HEADER);
   document.body.appendChild(GRADES_LIST);
+}
+
+function createActionButtons() {
+  const BUTTONS_CONTAINER = document.createElement("div");
+  BUTTONS_CONTAINER.id = "action-buttons-container";
+
+  createAverageButton(BUTTONS_CONTAINER);
+  createHighestGradeButton(BUTTONS_CONTAINER);
+  createAnyFailuresButton(BUTTONS_CONTAINER);
+
+  document.body.appendChild(BUTTONS_CONTAINER);
+}
+
+function createAverageButton(container) {
+  const AVERAGE_BUTTON = generateButtonConfiguration("average-button", "calcular promedio", "average-button");
+  container.appendChild(AVERAGE_BUTTON);
+}
+
+function createHighestGradeButton(container) {
+  const HIGHEST_GRADE_BUTTON = generateButtonConfiguration("highest-grade-button", "buscar nota más alta", "highest-grade-button");
+  container.appendChild(HIGHEST_GRADE_BUTTON);
+}
+
+function createAnyFailuresButton(container) {
+  const ANY_FAILURES_BUTTON = generateButtonConfiguration("any-failures-button", "¿hay algún suspenso?", "any-failures-button");
+  container.appendChild(ANY_FAILURES_BUTTON);
+}
+
+function generateButtonConfiguration(id, text, className) {
+  const BUTTON = document.createElement("button");
+  BUTTON.id = id;
+  BUTTON.textContent = text;
+  BUTTON.classList.add(className, "action-button");
+  return BUTTON;
 }
