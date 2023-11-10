@@ -124,3 +124,15 @@ body {
   color: #f8f8f8;
   transform: scale(0.98);
 }
+
+.result-paragraph {
+  color: #2400ff;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: .79%;
+  text-transform: capitalize;
+}
+
+.hidden-result-paragraph {
+  color: transparent;
+}

@@ -9,6 +9,8 @@ const STUDENTS_LIST = [
 const STUDENT_NAME = document.getElementById("student-name");
 const CHECK_BUTTON = document.getElementById("check-button");
 
+/* -------------------------------------------------------------------------------------------- */
+
 CHECK_BUTTON.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -18,6 +20,8 @@ CHECK_BUTTON.addEventListener("click", (e) => {
     changeLayout();
   }
 });
+
+/* -------------------------------------------------------------------------------------------- */
 
 function checkEmptyInput() {
   return STUDENT_NAME.value === "";
@@ -59,35 +63,127 @@ function createGradeList() {
 }
 
 function createActionButtons() {
-  const BUTTONS_CONTAINER = document.createElement("div");
-  BUTTONS_CONTAINER.id = "action-buttons-container";
-
-  createAverageButton(BUTTONS_CONTAINER);
-  createHighestGradeButton(BUTTONS_CONTAINER);
-  createAnyFailuresButton(BUTTONS_CONTAINER);
-
-  document.body.appendChild(BUTTONS_CONTAINER);
+  createAverageButton();
+  createHighestGradeButton();
+  createAnyFailuresButton();
 }
 
-function createAverageButton(container) {
-  const AVERAGE_BUTTON = generateButtonConfiguration("average-button", "calcular promedio", "average-button");
-  container.appendChild(AVERAGE_BUTTON);
+function createAverageButton() {
+  createResultParagraphAboveButton("average-result-paragraph", "average");
+  const AVERAGE_BUTTON = generateButtonConfiguration("average-button", "calcular promedio");
+  document.body.appendChild(AVERAGE_BUTTON);
+
+  createElementsAndEventListeners("average-result-paragraph", "average-button", "average");
 }
 
-function createHighestGradeButton(container) {
-  const HIGHEST_GRADE_BUTTON = generateButtonConfiguration("highest-grade-button", "buscar nota más alta", "highest-grade-button");
-  container.appendChild(HIGHEST_GRADE_BUTTON);
+function createHighestGradeButton() {
+  createResultParagraphAboveButton("highest-grade-result-paragraph", "highest-grade");
+  const HIGHEST_GRADE_BUTTON = generateButtonConfiguration("highest-grade-button", "buscar nota más alta");
+  document.body.appendChild(HIGHEST_GRADE_BUTTON);
+
+  createElementsAndEventListeners("highest-grade-result-paragraph", "highest-grade-button", "highest-grade");
 }
 
-function createAnyFailuresButton(container) {
-  const ANY_FAILURES_BUTTON = generateButtonConfiguration("any-failures-button", "¿hay algún suspenso?", "any-failures-button");
-  container.appendChild(ANY_FAILURES_BUTTON);
+function createAnyFailuresButton() {
+  createResultParagraphAboveButton("any-failures-result-paragraph", "any-failures");
+  const ANY_FAILURES_BUTTON = generateButtonConfiguration("any-failures-button", "¿hay algún suspenso?");
+  document.body.appendChild(ANY_FAILURES_BUTTON);
+
+  createElementsAndEventListeners("any-failures-result-paragraph", "any-failures-button", "any-failures");
 }
 
-function generateButtonConfiguration(id, text, className) {
+function createResultParagraphAboveButton(id, operation) {
+  const RESULT_PARAGRAPH = document.createElement("p");
+  RESULT_PARAGRAPH.id = id;
+  RESULT_PARAGRAPH.classList.add("result-paragraph");
+  RESULT_PARAGRAPH.classList.add("hidden-result-paragraph");
+
+  switch (operation) {
+    case "average":
+      RESULT_PARAGRAPH.innerHTML = "promedio: ";
+      break;
+    case "highest-grade":
+      RESULT_PARAGRAPH.innerHTML = "nota más alta: ";
+      break;
+    case "any-failures":
+      RESULT_PARAGRAPH.innerHTML = "¿hubo algún suspenso? ";
+      break;
+  }
+
+  document.body.appendChild(RESULT_PARAGRAPH);
+}
+
+function generateButtonConfiguration(id, text) {
   const BUTTON = document.createElement("button");
   BUTTON.id = id;
   BUTTON.textContent = text;
-  BUTTON.classList.add(className, "action-button");
+  BUTTON.classList.add("action-button");
   return BUTTON;
+}
+
+function createElementsAndEventListeners(paragraph_id, button_id, operation) {
+  const PARAGRAPH = document.getElementById(paragraph_id);
+  const BUTTON = document.getElementById(button_id);
+
+  BUTTON.addEventListener("click", () => {
+    switch (operation) {
+      case "average":
+        if (!PARAGRAPH.textContent.includes(calculateAverage())) {
+          PARAGRAPH.classList.remove("hidden-result-paragraph");
+          PARAGRAPH.textContent += calculateAverage();
+        }
+        break;
+      case "highest-grade":
+        if (!PARAGRAPH.textContent.includes(checkHighestGrade())) {
+          PARAGRAPH.classList.remove("hidden-result-paragraph");
+          PARAGRAPH.textContent += checkHighestGrade();
+        }
+        break;
+      case "any-failures":
+        if (!PARAGRAPH.textContent.includes(checkAnyFailures())) {
+          PARAGRAPH.classList.remove("hidden-result-paragraph");
+          PARAGRAPH.textContent += checkAnyFailures();
+        }
+        break;
+    }
+  })
+}
+
+function calculateAverage() {
+  const studentName = STUDENT_NAME.value.toLowerCase();
+  const student = STUDENTS_LIST.find((student) => student.name.toLowerCase() === studentName);
+
+  let totalGrades = 0;
+
+  for (let i = 0; i < student.grades.length; i++) {
+    totalGrades += student.grades[i];
+  }
+
+  const AVERAGE = totalGrades / student.grades.length;
+  const TRUNCATED_AVERAGE = AVERAGE.toFixed(2);
+  return TRUNCATED_AVERAGE;
+}
+
+function checkHighestGrade() {
+  const studentName = STUDENT_NAME.value.toLowerCase();
+  const student = STUDENTS_LIST.find((student) => student.name.toLowerCase() === studentName);
+
+  let highestGrade = Number.MIN_VALUE;
+
+  student.grades.forEach(grade => {
+    if (grade > highestGrade) {
+      highestGrade = grade;
+    }
+  });
+
+  return highestGrade;
+}
+
+function checkAnyFailures() {
+  const studentName = STUDENT_NAME.value.toLowerCase();
+  const student = STUDENTS_LIST.find((student) => student.name.toLowerCase() === studentName);
+
+  const failures = student.grades.filter((grade) => grade < 5.0);
+
+  return failures.length > 0 ? `Suspendidas: ${failures.join(", ")}` : "Ningún suspenso";
 }
