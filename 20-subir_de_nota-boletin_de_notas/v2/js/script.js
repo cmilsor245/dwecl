@@ -41,7 +41,8 @@ function changeLayout() {
   hideCheckButton();
   createGradeList();
   createActionButtons();
-  disableButton();
+  enableButton(RESET_BUTTON);
+  disableButton(CHECK_BUTTON);
 }
 
 function hideCheckButton() {
@@ -142,6 +143,7 @@ function createElementsAndEventListeners(paragraph_id, button_id, operation) {
         if (!PARAGRAPH.textContent.includes(calculateAverage())) {
           PARAGRAPH.classList.remove("hidden-result-paragraph");
           PARAGRAPH.textContent += calculateAverage();
+          
         }
         break;
       case "highest-grade":
@@ -199,9 +201,12 @@ function checkAnyFailures() {
   return failures.length > 0 ? `Suspendidas: ${failures.join(", ")}` : "Ningún suspenso";
 }
 
-function disableButton() {
-  RESET_BUTTON.removeAttribute("disabled");
-  CHECK_BUTTON.setAttribute("disabled", "true");
+function enableButton(button) {
+  button.removeAttribute("disabled");
+}
+
+function disableButton(button) {
+  button.setAttribute("disabled", "true");
 }
 
 function removeGradesTree() {
@@ -244,7 +249,8 @@ function resetResults() {
   resetResultParagraph("average-result-paragraph");
   resetResultParagraph("highest-grade-result-paragraph");
   resetResultParagraph("any-failures-result-paragraph");
-  enableButton();
+  enableButton(CHECK_BUTTON);
+  disableButton(RESET_BUTTON);
 }
 
 function resetResultParagraph(id) {
@@ -254,9 +260,4 @@ function resetResultParagraph(id) {
     resultParagraph.classList.add("hidden-result-paragraph");
     resultParagraph.textContent = "";
   }
-}
-
-function enableButton() {
-  CHECK_BUTTON.removeAttribute("disabled");
-  RESET_BUTTON.setAttribute("disabled", "true");
 }
