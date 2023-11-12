@@ -77,6 +77,55 @@ body {
   color: #0f0f0f;
 }
 
+#check-button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #bbbaba;
+  color: #858585;
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+#reset-button {
+  border: none;
+  background-color: #b94838;
+  color: #fcfcfc;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: large;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+  position: relative;
+  bottom: 8px;
+}
+
+#reset-button:hover {
+  background-color: #826494;
+  transform: scale(1.03);
+  transition: .5s;
+  border: 1px solid #0f0f0f;
+}
+
+#reset-button:active {
+  transform: scale(0.98);
+  background-color: #81539c;
+  border: 1px solid #292929;
+  color: #0f0f0f;
+}
+
+#reset-button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #bbbaba;
+  color: #858585;
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.hidden-check-button {
+  display: none;
+}
+
 #grades-header {
   text-transform: capitalize;
   margin-bottom: 5px;

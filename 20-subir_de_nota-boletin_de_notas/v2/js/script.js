@@ -9,6 +9,7 @@ const STUDENTS_LIST = [
 
 const STUDENT_NAME = document.getElementById("student-name");
 const CHECK_BUTTON = document.getElementById("check-button");
+const RESET_BUTTON = document.getElementById("reset-button");
 
 /* -------------------------------------------------------------------------------------------- */
 
@@ -23,6 +24,12 @@ CHECK_BUTTON.addEventListener("click", (e) => {
   }
 });
 
+RESET_BUTTON.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  removeGradesTree();
+})
+
 /* -------------------------------------------------------------------------------------------- */
 
 // functions
@@ -31,13 +38,14 @@ function checkEmptyInput() {
 }
 
 function changeLayout() {
-  removeCheckButton();
+  hideCheckButton();
   createGradeList();
   createActionButtons();
+  disableButton();
 }
 
-function removeCheckButton() {
-  CHECK_BUTTON.remove();
+function hideCheckButton() {
+  CHECK_BUTTON.classList.add("disabled-button");
 }
 
 function createGradeList() {
@@ -189,4 +197,66 @@ function checkAnyFailures() {
   const failures = student.grades.filter((grade) => grade < 5.0);
 
   return failures.length > 0 ? `Suspendidas: ${failures.join(", ")}` : "Ningún suspenso";
+}
+
+function disableButton() {
+  RESET_BUTTON.removeAttribute("disabled");
+  CHECK_BUTTON.setAttribute("disabled", "true");
+}
+
+function removeGradesTree() {
+  const gradesHeader = document.getElementById("grades-header");
+  const gradesList = document.getElementById("grades-list");
+  const averageButton = document.getElementById("average-button");
+  const highestGradeButton = document.getElementById("highest-grade-button");
+  const anyFailuresButton = document.getElementById("any-failures-button");
+
+  if (gradesHeader) {
+    removeSubtree(gradesHeader);
+  }
+
+  if (gradesList) {
+    removeSubtree(gradesList);
+  }
+
+  resetResults();
+
+  if (averageButton) {
+    removeSubtree(averageButton);
+  }
+
+  if (highestGradeButton) {
+    removeSubtree(highestGradeButton);
+  }
+
+  if (anyFailuresButton) {
+    removeSubtree(anyFailuresButton);
+  }
+}
+
+function removeSubtree(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+function resetResults() {
+  resetResultParagraph("average-result-paragraph");
+  resetResultParagraph("highest-grade-result-paragraph");
+  resetResultParagraph("any-failures-result-paragraph");
+  enableButton();
+}
+
+function resetResultParagraph(id) {
+  const resultParagraph = document.getElementById(id);
+
+  if (resultParagraph) {
+    resultParagraph.classList.add("hidden-result-paragraph");
+    resultParagraph.textContent = "";
+  }
+}
+
+function enableButton() {
+  CHECK_BUTTON.removeAttribute("disabled");
+  RESET_BUTTON.setAttribute("disabled", "true");
 }
