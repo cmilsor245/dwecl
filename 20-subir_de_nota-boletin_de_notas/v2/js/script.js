@@ -1,3 +1,5 @@
+// ! el reseteo de todo no me funciona correctamente, los botones de acción no se me eliminan
+
 // variables inizialization
 const STUDENTS_LIST = [
   { name: "christian", grades: [7.5, 8.2, 6.8, 9.1, 9.9, 8.6, 7.3, 8.9, 6.5, 6.8, 7.0, 5.5] },
@@ -143,19 +145,21 @@ function createElementsAndEventListeners(paragraph_id, button_id, operation) {
         if (!PARAGRAPH.textContent.includes(calculateAverage())) {
           PARAGRAPH.classList.remove("hidden-result-paragraph");
           PARAGRAPH.textContent += calculateAverage();
-          
+          disableButton(BUTTON);
         }
         break;
       case "highest-grade":
         if (!PARAGRAPH.textContent.includes(checkHighestGrade())) {
           PARAGRAPH.classList.remove("hidden-result-paragraph");
           PARAGRAPH.textContent += checkHighestGrade();
+          disableButton(BUTTON);
         }
         break;
       case "any-failures":
         if (!PARAGRAPH.textContent.includes(checkAnyFailures())) {
           PARAGRAPH.classList.remove("hidden-result-paragraph");
           PARAGRAPH.textContent += checkAnyFailures();
+          disableButton(BUTTON);
         }
         break;
     }

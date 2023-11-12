@@ -168,6 +168,30 @@ body {
   transform: scale(0.98);
 }
 
+#average-button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #bbbaba;
+  color: #858585;
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+#highest-grade-button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #bbbaba;
+  color: #858585;
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+#any-failures-button:disabled {
+  background-color: #cfcfcf;
+  border: 1px solid #bbbaba;
+  color: #858585;
+  opacity: .65;
+  cursor: not-allowed;
+}
+
 .result-paragraph {
   color: #2400ff;
   font-weight: bold;
