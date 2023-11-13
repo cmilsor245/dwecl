@@ -65,28 +65,31 @@ function mostrarNotas(nombreAlumno) {
 
 function mostrarPromedio() {
   const NOMBRE_ALUMNO = NOMBRE_ALUMNO_INPUT.value.toLowerCase();
-  const ALUMNO = LISTA_ALUMNOS.find((alumno) => alumno.nombre === NOMBRE_ALUMNO);
-
-  if (ALUMNO) {
-    const NOTAS = ALUMNO.notas;
-    const suma = NOTAS.reduce((acumulador, nota) => acumulador + nota, 0);
-    const promedio = suma / NOTAS.length;
-    PROMEDIO_TEXTO_ELEMENTO.innerHTML += promedio.toFixed(2);
-  } else {
-    alert("No existe un alumno con ese nombre");
-  }
+  mostrarEstadistica(NOMBRE_ALUMNO, calcularPromedio, PROMEDIO_TEXTO_ELEMENTO);
 }
 
-/* ----------------------------------------------------- */
+function calcularPromedio(notas) {
+  const suma = notas.reduce((acumulador, nota) => acumulador + nota, 0);
+  const promedio = suma / notas.length;
+  return promedio.toFixed(2);
+}
+
+/* ------------------------------------------------------------- */
 
 function mostrarNotaMasAlta() {
   const NOMBRE_ALUMNO = NOMBRE_ALUMNO_INPUT.value.toLowerCase();
-  const ALUMNO = LISTA_ALUMNOS.find((alumno) => alumno.nombre === NOMBRE_ALUMNO);
+  mostrarEstadistica(NOMBRE_ALUMNO, (notas) => Math.max(...notas), NOTA_MAS_ALTA_TEXTO_ELEMENTO);
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+function mostrarEstadistica(nombreAlumno, calcularEstadistica, elementoTexto) {
+  const ALUMNO = LISTA_ALUMNOS.find((alumno) => alumno.nombre === nombreAlumno);
 
   if (ALUMNO) {
     const NOTAS = ALUMNO.notas;
-    const notaMasAlta = Math.max(...NOTAS);
-    NOTA_MAS_ALTA_TEXTO_ELEMENTO.innerHTML += notaMasAlta;
+    const ESTADISTICA = calcularEstadistica(NOTAS);
+    elementoTexto.innerHTML += ESTADISTICA;
   } else {
     alert("No existe un alumno con ese nombre");
   }
