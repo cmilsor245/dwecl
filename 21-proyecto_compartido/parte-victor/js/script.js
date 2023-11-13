@@ -51,11 +51,11 @@ function mostrarNotas(nombreAlumno) {
     const NOTAS = ALUMNO.notas;
     NOTAS_LISTA_ELEMENTO.innerHTML = "";
 
-    for (const nota of NOTAS) {
+    NOTAS.forEach((nota) => {
       const LI_ELEMENTO = document.createElement("li");
       LI_ELEMENTO.textContent = nota;
       NOTAS_LISTA_ELEMENTO.appendChild(LI_ELEMENTO);
-    }
+    });
   } else {
     alert("No existe un alumno con ese nombre");
   }
