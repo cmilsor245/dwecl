@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type = "text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#notas-contenedor {
+  margin-top: 20px;
+}
+
+#notas-texto {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#notas-lista {
+  list-style: none;
+  padding: 0;
+}
+
+#notas-lista li {
+  margin-bottom: 5px;
+}
+
+.contenedor-botones {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contenedor-botones button {
+  width: 100%;
+}
+
+#promedio-texto,
+#nota-mas-alta-texto,
+#algun-suspenso-texto {
+  font-weight: bold;
+}
+
+.alerta {
+  color: #dc3545;
+  margin-top: 10px;
+}
+
+#nombre-alumno-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#contenedor-botones {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#encabezado {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  background-color: #343cdb;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.boton-deshabilitado {
+  background-color: #dbdbdb;
+  color: #b9b9b9;
+  opacity: .78;
+}
+
+.boton-deshabilitado:hover {
+  background-color: #cfcfcf;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
