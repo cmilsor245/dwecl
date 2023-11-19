@@ -1,0 +1,1 @@
+const TWEET_INPUT = document.querySelector("#tweet-input");
