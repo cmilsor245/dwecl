@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "mollen personal use-bold";
+  src: url("../fonts/mollen/Mollen Personal Use-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 ::selection {
   background-color: #6e6e6e;
   color: #d2d4d4;
@@ -28,6 +35,10 @@ main {
   display: flex;
   gap: 20%;
   justify-content: center;
+}
+
+#tweet-input-label {
+  font-family: "mollen personal use-bold";
 }
 
 #tweet-input {
