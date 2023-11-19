@@ -24,3 +24,12 @@ function pushTweetToArray(tweet_text, tweets_array) {
   };
   tweets_array.push(TWEET_OBJECT);
 }
+
+export function handleTweetListWrapperClick(event, tweet_input) {
+  if (event.target.closest(".trash-icon-svg")) { // he tenido que utilizar "closest" por utilizar una imagen dentro del span
+    const TWEET = event.target.closest("li");
+    TWEET.remove();
+    alert("Tweet eliminado");
+    tweet_input.focus();
+  }
+}

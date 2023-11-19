@@ -63,4 +63,13 @@ li {
   float: right;
   position: relative;
   bottom: 9px;
+  transition: .2s;
+}
+
+.trash-icon-svg:hover {
+  transform: scale(1.12);
+}
+
+.trash-icon-svg:active {
+  transform: scale(0.9);
 }
