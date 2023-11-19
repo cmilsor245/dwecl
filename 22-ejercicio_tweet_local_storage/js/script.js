@@ -13,9 +13,26 @@ UPLOAD_TWEET_BUTTON.addEventListener("click", uploadTweet);
 function uploadTweet() {
   const TWEET = TWEET_INPUT.value;
 
-  TWEET_INPUT.value = "";
+  clearInput(TWEET_INPUT);
+
+  pushTweetToArray(TWEET);
 
   const NEW_TWEET = document.createElement("li");
   NEW_TWEET.innerHTML = `<span id = "tweet-li-text">${TWEET}</span><span id = "trash-icon">${TRASH_ICON}</span>`;
   TWEET_LIST_ELEMENT.appendChild(NEW_TWEET);
+}
+
+function clearInput(input) {
+  input.value = "";
+  input.focus();
+}
+
+function pushTweetToArray(tweet) {
+  const UNIQUE_ID = Date.now(); // se genera un id único para cada tweet ya que no pueden generarse dos fechas iguales
+
+  const TWEET_OBJECT = {
+    id: UNIQUE_ID,
+    text: tweet
+  };
+  tweets_array.push(TWEET_OBJECT);
 }
