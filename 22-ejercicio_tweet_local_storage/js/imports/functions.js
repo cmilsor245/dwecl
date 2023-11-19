@@ -5,9 +5,9 @@ export function uploadTweet(tweet_input, tweets_array, trash_icon_svg, tweet_lis
 
   pushTweetToArray(TWEET, tweets_array);
 
-  const NEW_TWEET = document.createElement("li");
-  NEW_TWEET.innerHTML = `<span id = "tweet-li-text">${tweets_array[tweets_array.length - 1].text}</span><span id = "trash-icon">${trash_icon_svg}</span>`;
-  tweet_list_element.appendChild(NEW_TWEET);
+  updateLocalStorage(tweets_array);
+
+  appendTweetToList(tweets_array, trash_icon_svg, tweet_list_element);  
 }
 
 function clearInput(input) {
@@ -23,6 +23,16 @@ function pushTweetToArray(tweet_text, tweets_array) {
     text: tweet_text
   };
   tweets_array.push(TWEET_OBJECT);
+}
+
+function updateLocalStorage(tweets_array) {
+  localStorage.setItem("tweets", JSON.stringify(tweets_array));
+}
+
+function appendTweetToList(tweets_array, trash_icon_svg, tweet_list_element) {
+  const NEW_TWEET = document.createElement("li");
+  NEW_TWEET.innerHTML = `<span id = "tweet-li-text">${tweets_array[tweets_array.length - 1].text}</span><span id = "trash-icon">${trash_icon_svg}</span>`;
+  tweet_list_element.appendChild(NEW_TWEET);
 }
 
 export function handleTweetListWrapperClick(event, tweet_input) {
