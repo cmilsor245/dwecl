@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "mollen personal use-light";
+  src: url("../fonts/mollen/Mollen Personal Use-Light.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+::selection {
+  background-color: #6e6e6e;
+  color: #d2d4d4;
+}
+
+* {
+  font-family: "mollen personal use-light";
+  cursor: default;
+}
+
+#program-title {
+  text-align: right;
+  margin-right: 42%;
+}
+
+#program-title, #my-tweets-title, #tweet-input-label {
+  text-transform: capitalize;
+}
+
+main {
+  display: flex;
+  gap: 20%;
+  justify-content: center;
+}
+
+#tweet-input {
+  cursor: text;
+}
+
+#upload-tweet-button {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+li {
+  margin-bottom: 13px;
+}
+
+#tweet-li-text {
+  margin-right: 100px;
+}
+
+#trash-icon * {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  bottom: 9px;
+}
