@@ -1,3 +1,4 @@
+
 import * as functions from "./imports/functions.js";
 
 let tweets_array = [];
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
       functions.appendTweetToList(tweet, TRASH_ICON_SVG, TWEET_LIST_ELEMENT);
     });
   } else {
-    functions.appendTweetToList("", TRASH_ICON_SVG, TWEET_LIST_ELEMENT);
+    TWEET_LIST_ELEMENT.innerHTML = "<h3 id = \"no-tweets-h3\">no hay tweets</h3>";
   }
 });
 
@@ -25,6 +26,7 @@ UPLOAD_TWEET_BUTTON.addEventListener("click", () => {
   functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON_SVG, TWEET_LIST_ELEMENT);
 });
 
+// ! los elementos no se eliminan del local storage
 TWEET_LIST_WRAPPER.addEventListener("click", (event) => {
   functions.handleTweetListWrapperClick(event, TWEET_INPUT);
 });

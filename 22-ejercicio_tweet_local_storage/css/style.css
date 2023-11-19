@@ -105,3 +105,8 @@ li {
 .trash-icon-svg:active {
   transform: scale(0.9);
 }
+
+#no-tweets-h3 {
+  text-transform: capitalize;
+  color: red;
+}
