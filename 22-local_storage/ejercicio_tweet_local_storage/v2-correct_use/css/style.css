@@ -1,0 +1,67 @@
+:root {
+  --page-background: #f5f8fae0;
+  --twitter-blue: #1da1f2;
+  --twitter-black: #14171a;
+}
+
+@font-face {
+  font-family: "mollen personal use-light";
+  src: url("../fonts/mollen/Mollen Personal Use-Light.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "mollen personal use-bold";
+  src: url("../fonts/mollen/Mollen Personal Use-Bold.otf");
+}
+
+* {
+  font-family: "mollen personal use-light";
+  cursor: default;
+}
+
+::selection {
+  background-color: var(--twitter-black);
+  color: var(--twitter-blue);
+}
+
+body {
+  background-color: var(--page-background);
+}
+
+#program-title {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: auto 20%;
+}
+
+#tweet-input-label {
+  font-family: "mollen personal use-bold";
+  text-transform: capitalize;
+}
+
+#tweet-input {
+  max-width: 250px;
+  max-height: 120px;
+  min-width: 200px;
+  min-height: 30px;
+}
+
+#tweets-display-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+#my-tweets-title {
+  text-align: right;
+  text-transform: capitalize;
+  margin-right: 9%;
+  color: var(--twitter-blue);
+}
