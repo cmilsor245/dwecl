@@ -21,7 +21,7 @@ function clearTweetList(tweet_list_element) {
 }
 
 export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
-  const UNIQUE_ID = Date.now();
+  const UNIQUE_ID = Date.now(); // id único
   const TWEET_ELEMENT = {
     id: UNIQUE_ID,
     text: tweet_input.value
