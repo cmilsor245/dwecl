@@ -11,7 +11,7 @@ const TRASH_ICON = "<svg id = \"trash-icon-svg\" xmlns = \"http://www.w3.org/200
 let tweets_array = functions.loadFromLocalStorage(CLEAR_TWEETS_BUTTON);
 
 window.addEventListener("DOMContentLoaded", () => {
-  functions.displayTweets(tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT);
+  functions.displayTweets(tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON);
   tweets_array = functions.loadFromLocalStorage(CLEAR_TWEETS_BUTTON);
 })
 
@@ -22,4 +22,10 @@ UPLOAD_TWEET_BUTTON.addEventListener("click", () => {
 CLEAR_TWEETS_BUTTON.addEventListener("click", () => {
   functions.clearTweets(TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, tweets_array, TRASH_ICON, TWEET_INPUT);
   tweets_array = functions.clearTweets(TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, tweets_array, TRASH_ICON, TWEET_INPUT);
+})
+
+TWEET_LIST_ELEMENT.addEventListener("click", (event) => {
+  if (event.target && event.target.id === "trash-icon-svg") {
+    console.log(`trash icon clicked ${Date.now()}`);
+  }
 })
