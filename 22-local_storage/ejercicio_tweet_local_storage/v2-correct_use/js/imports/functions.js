@@ -21,16 +21,28 @@ function clearTweetList(tweet_list_element) {
 }
 
 export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
-  const UNIQUE_ID = Date.now(); // id único
-  const TWEET_ELEMENT = {
-    id: UNIQUE_ID,
-    text: tweet_input.value
+  if (!emptyInput(tweet_input)) {
+    const UNIQUE_ID = Date.now(); // id único
+    const TWEET_ELEMENT = {
+      id: UNIQUE_ID,
+      text: tweet_input.value
+    }
+    tweets_array.push(TWEET_ELEMENT);
+
+    displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
+
+    resetInput(tweet_input);
+  } else {
+    alert("No se puede enviar un tweet vacío");
   }
-  tweets_array.push(TWEET_ELEMENT);
+}
 
-  displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
-
-  resetInput(tweet_input);
+function emptyInput(tweet_input) {
+  if (tweet_input.value === "") {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function resetInput(tweet_input) {
