@@ -2,6 +2,7 @@ import * as functions from "./imports/functions.js";
 
 const TWEET_INPUT = document.querySelector("#tweet-input");
 const UPLOAD_TWEET_BUTTON = document.querySelector("#upload-tweet-button");
+const CLEAR_TWEETS_BUTTON = document.querySelector("#clear-tweets-button");
 
 const TWEET_LIST_ELEMENT = document.querySelector("#tweet-list-element");
 
@@ -15,4 +16,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 UPLOAD_TWEET_BUTTON.addEventListener("click", () => {
   functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT);
+})
+
+CLEAR_TWEETS_BUTTON.addEventListener("click", () => {
+  
 })

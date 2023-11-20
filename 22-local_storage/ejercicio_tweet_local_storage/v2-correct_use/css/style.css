@@ -6,6 +6,11 @@
   --twitter-black: #14171a;
   --twitter-white: #f3f3f3;
   --twitter-red: #eb1527;
+  --twitter-light-red: #ff7e8a;
+  --twitter-dark-red: #8a1519;
+  --twitter-gray: #657786;
+  --twitter-light-gray: #aab8c2;
+  --twitter-dark-gray: #363b41;
 }
 
 @font-face {
@@ -78,6 +83,44 @@ main {
 #upload-tweet-button:active {
   background-color: var(--twitter-light-blue);
   transform: scale(0.95);
+}
+
+#clear-tweets-button {
+  background-color: var(--twitter-red);
+  color: var(--twitter-white);
+  text-transform: uppercase;
+  width: 100%;
+  height: 36px;
+  border: 2px solid var(--twitter-light-red);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .2s;
+  margin-top: 5px;
+}
+
+#clear-tweets-button:hover {
+  background-color: var(--twitter-dark-red);
+  font-family: "mollen personal use-bold";
+}
+
+#clear-tweets-button:active {
+  background-color: var(--twitter-light-red);
+  transform: scale(0.95);
+}
+
+button.disabled-button[disabled] {
+  cursor: not-allowed !important;
+  background-color: var(--twitter-gray) !important;
+  border: 2px solid var(--twitter-light-gray) !important;
+  opacity: .5;
+}
+
+button.disabled-button[disabled]:hover {
+  background-color: var(--twitter-dark-gray) !important;
+}
+
+button.disabled-button[disabled]:active {
+  background-color: var(--twitter-light-gray) !important;
 }
 
 #tweets-display-section {
