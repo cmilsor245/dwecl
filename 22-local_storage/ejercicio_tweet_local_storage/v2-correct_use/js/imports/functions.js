@@ -47,10 +47,17 @@ export function clearTweets(tweet_list_element, buttonToEnable, tweets_array, tr
 
   resetInput(tweet_input);
 
+  disableButton(buttonToEnable);
+
   return tweets_array;
 }
 
 function enableButton(button) {
   button.disabled = false;
   button.classList.remove("disabled-button");
+}
+
+function disableButton(button) {
+  button.disabled = true;
+  button.classList.add("disabled-button");
 }
