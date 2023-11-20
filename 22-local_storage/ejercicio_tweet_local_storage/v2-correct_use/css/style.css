@@ -5,6 +5,7 @@
   --twitter-light-blue: #63ade2;
   --twitter-black: #14171a;
   --twitter-white: #f3f3f3;
+  --twitter-red: #eb1527;
 }
 
 @font-face {
@@ -90,8 +91,20 @@ main {
   text-transform: capitalize;
   margin-right: 9%;
   color: var(--twitter-blue);
+  margin: 10px;
 }
 
 ul {
   padding: 20px;
+  margin: 0;
+}
+
+li {
+  margin-left: 33px;
+}
+
+#no-tweets-h3 {
+  color: var(--twitter-red);
+  text-transform: capitalize;
+  text-align: center;
 }
