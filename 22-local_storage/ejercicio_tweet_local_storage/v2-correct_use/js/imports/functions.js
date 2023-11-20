@@ -1,10 +1,10 @@
-export function displayTweets(tweets_array, tweet_list_element) {
+export function displayTweets(tweets_array, trash_icon, tweet_list_element) {
   if (tweets_array.length > 0) {
     clearTweetList(tweet_list_element);
 
     tweets_array.forEach(tweet => {
       const li = document.createElement('li');
-      li.textContent = tweet.text;
+      li.innerHTML = tweet.text + trash_icon;
       tweet_list_element.appendChild(li);
     });
   } else {
@@ -18,7 +18,7 @@ function clearTweetList(tweet_list_element) {
   }
 }
 
-export function uploadTweet(tweet_input, tweets_array, tweet_list_element) {
+export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element) {
   const UNIQUE_ID = Date.now();
   const TWEET_ELEMENT = {
     id: UNIQUE_ID,
@@ -26,7 +26,7 @@ export function uploadTweet(tweet_input, tweets_array, tweet_list_element) {
   }
   tweets_array.push(TWEET_ELEMENT);
 
-  displayTweets(tweets_array, tweet_list_element);
+  displayTweets(tweets_array, trash_icon, tweet_list_element);
 
   resetInput(tweet_input);
 }

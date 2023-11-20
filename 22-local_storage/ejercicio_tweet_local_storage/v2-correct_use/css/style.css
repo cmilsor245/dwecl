@@ -36,6 +36,7 @@ body {
 #program-title {
   text-align: center;
   text-transform: capitalize;
+  transition: .17s;
 }
 
 main {
@@ -101,6 +102,31 @@ ul {
 
 li {
   margin-left: 33px;
+  margin-bottom: 13px;
+}
+
+#trash-icon-svg {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  bottom: 9px;
+  transition: .12s;
+}
+
+#trash-icon-svg * {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  bottom: 9px;
+  transition: .2s;
+}
+
+#trash-icon-svg:hover {
+  transform: scale(1.12);
+}
+
+#trash-icon-svg:active {
+  transform: scale(0.9);
 }
 
 #no-tweets-h3 {
