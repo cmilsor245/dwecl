@@ -83,6 +83,7 @@ main {
 #upload-tweet-button:active {
   background-color: var(--twitter-light-blue);
   transform: scale(0.95);
+  font-family: "mollen personal use-bold";
 }
 
 #clear-tweets-button {
@@ -106,6 +107,7 @@ main {
 #clear-tweets-button:active {
   background-color: var(--twitter-light-red);
   transform: scale(0.95);
+  font-family: "mollen personal use-bold";
 }
 
 button.disabled-button[disabled] {

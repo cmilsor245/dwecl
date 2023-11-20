@@ -1,9 +1,20 @@
+export function loadFromLocalStorage(button) {
+  const TWEETS_LOCAL_STORAGE_ARRAY = JSON.parse(localStorage.getItem("tweets"));
+
+  if (TWEETS_LOCAL_STORAGE_ARRAY) {
+    enableButton(button);
+    return TWEETS_LOCAL_STORAGE_ARRAY;
+  } else {
+    return [];
+  }
+}
+
 export function displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
   if (tweets_array.length > 0) {
     clearTweetList(tweet_list_element);
 
     tweets_array.forEach(tweet => {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
       li.innerHTML = `<span id = "tweet-li-text">${tweet.text}</span>${trash_icon}`;
       tweet_list_element.appendChild(li);
     });
@@ -31,6 +42,8 @@ export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_el
 
     displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
 
+    localStorage.setItem("tweets", JSON.stringify(tweets_array));
+
     resetInput(tweet_input);
   } else {
     alert("No se puede enviar un tweet vacío");
@@ -56,6 +69,8 @@ export function clearTweets(tweet_list_element, buttonToEnable, tweets_array, tr
   tweets_array = [];
 
   displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
+
+  localStorage.clear();
 
   resetInput(tweet_input);
 
