@@ -30,4 +30,8 @@ TWEET_LIST_WRAPPER.addEventListener("click", (event) => {
   if (CLICKED_TRASH_ICON) {
     console.log(`test ${Date.now()}`);
   } */
+
+  if (event.target.closest("#trash-icon-span")) {
+    
+  }
 })
