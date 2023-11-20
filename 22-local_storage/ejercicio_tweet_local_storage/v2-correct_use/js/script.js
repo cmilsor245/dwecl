@@ -33,6 +33,6 @@ TWEET_LIST_WRAPPER.addEventListener("click", (event) => {
 
   const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-svg");
   if (CLICKED_TRASH_ICON) {
-    functions.handleTweetListWrapperClick(event, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON);
+    functions.handleTweetListWrapperClick(event, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, CLEAR_TWEETS_BUTTON);
   }
 })

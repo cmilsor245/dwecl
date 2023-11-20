@@ -101,14 +101,26 @@ function disableButton(button) {
   button.classList.add("disabled-button");
 }
 
-export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
-  const TWEET_TO_REMOVE_ID = event.target.closest("#trash-icon-span").getAttribute("data-id");
+export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable, buttonToDisable) {
+  const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-span");
 
-  let new_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
+  if (CLICKED_TRASH_ICON) {
+    const TWEET_TO_REMOVE_ID = parseInt(CLICKED_TRASH_ICON.getAttribute("data-id"), 10);
 
-  displayTweets(new_array, trash_icon, tweet_list_element, buttonToEnable);
+    const TWEET_INDEX_TO_REMOVE = tweets_array.findIndex(tweet => tweet.id === TWEET_TO_REMOVE_ID);
 
-  saveToLocalStorage(new_array);
+    if (TWEET_INDEX_TO_REMOVE !== -1) {
+      tweets_array.splice(TWEET_INDEX_TO_REMOVE, 1);
+
+      displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
+
+      saveToLocalStorage(tweets_array);
+    }
+
+    if (tweets_array.length === 0) {
+      disableButton(buttonToDisable);
+    }
+  }
 }
 
 function saveToLocalStorage(tweets_array) {
