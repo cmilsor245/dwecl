@@ -90,9 +90,9 @@ function disableButton(button) {
 }
 
 export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
-  const TEST = event.target.closest("#trash-icon-span").getAttribute("data-id");
+  const TWEET_TO_REMOVE_ID = event.target.closest("#trash-icon-span").getAttribute("data-id");
 
-  tweets_array = tweets_array.filter(tweet => tweet.id !== TEST);
+  tweets_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
 
   displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
 }
