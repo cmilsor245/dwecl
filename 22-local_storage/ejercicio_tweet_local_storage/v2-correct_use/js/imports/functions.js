@@ -4,7 +4,7 @@ export function displayTweets(tweets_array, trash_icon, tweet_list_element) {
 
     tweets_array.forEach(tweet => {
       const li = document.createElement('li');
-      li.innerHTML = tweet.text + trash_icon;
+      li.innerHTML = `<span id = "tweet-li-text">${tweet.text}</span>${trash_icon}`;
       tweet_list_element.appendChild(li);
     });
   } else {

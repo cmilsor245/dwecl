@@ -5,7 +5,7 @@ const UPLOAD_TWEET_BUTTON = document.querySelector("#upload-tweet-button");
 
 const TWEET_LIST_ELEMENT = document.querySelector("#tweet-list-element");
 
-const TRASH_ICON = "<svg id = \"trash-icon-svg\" width = \"25px\" height = \"25px\" viewBox = \"0 0 24 24\" fill = \"none\" xmlns = \"http://www.w3.org/2000/svg\" color = \"#ff0000\" stroke-width = \"1.9\"><path d = \"M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9\" fill = \"#ff0000\"></path><path d = \"M20 9L18.005 20.3463C17.8369 21.3026 17.0062 22 16.0353 22H7.96474C6.99379 22 6.1631 21.3026 5.99496 20.3463L4 9H20Z\" stroke = \"#ff0000\" stroke-width = \"1.9\" stroke-linecap = \"round\" stroke-linejoin = \"round\"></path><path d = \"M21 6H15.375M3 6H8.625M8.625 6V4C8.625 2.89543 9.52043 2 10.625 2H13.375C14.4796 2 15.375 2.89543 15.375 4V6M8.625 6H15.375\" stroke = \"#ff0000\" stroke-width = \"1.9\" stroke-linecap = \"round\" stroke-linejoin = \"round\"></path></svg>";
+const TRASH_ICON = "<svg id = \"trash-icon-svg\" xmlns = \"http://www.w3.org/2000/svg\" width = \"24\" height = \"24\" viewBox = \"0 0 24 24\"><g fill = \"none\"><path fill = \"red\" d = \"M8 21h8a2 2 0 0 0 2-2V7H6v12a2 2 0 0 0 2 2Z\" opacity = \".16\"/><path stroke = \"red\" stroke-linecap = \"round\" stroke-linejoin = \"round\" stroke-width = \"2\" d = \"M14 11v6m-4-6v6M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M4 7h16M7 7l2-4h6l2 4\"/></g></svg>";
 
 let tweets_array = [];
 
