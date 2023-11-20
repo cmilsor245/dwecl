@@ -7,7 +7,7 @@ const TWEET_LIST_ELEMENT = document.querySelector("#tweet-list-element");
 
 let tweets_array = [];
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   functions.displayTweets(tweets_array, TWEET_LIST_ELEMENT);
 })
 
