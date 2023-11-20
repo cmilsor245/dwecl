@@ -2,7 +2,9 @@ const CONTENT_DIV = document.querySelector("#content");
 
 // localStorage.clear();
 
-// localStorage.removeItem(3);
+// localStorage.removeItem("nombre");
+// localStorage.removeItem("array");
+// localStorage.removeItem("object");
 
 saveInLocalStorage();
 

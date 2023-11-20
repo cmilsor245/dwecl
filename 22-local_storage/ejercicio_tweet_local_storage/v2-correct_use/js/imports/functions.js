@@ -15,7 +15,7 @@ export function displayTweets(tweets_array, trash_icon, tweet_list_element, butt
 
     tweets_array.forEach(tweet => {
       const li = document.createElement("li");
-      li.innerHTML = `<span id = "tweet-li-text">${tweet.text}</span><span id = "trash-icon-span">${trash_icon}</span>`;
+      li.innerHTML = `<span id = "tweet-li-text">${tweet.text}</span><span id = "trash-icon-span" data-id = "${tweet.id}">${trash_icon}</span>`;
       tweet_list_element.appendChild(li);
     });
 
@@ -33,7 +33,7 @@ function clearTweetList(tweet_list_element) {
 
 export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
   if (!emptyInput(tweet_input)) {
-    const UNIQUE_ID = Date.now(); // id único
+    const UNIQUE_ID = Date.now();
     const TWEET_ELEMENT = {
       id: UNIQUE_ID,
       text: tweet_input.value
@@ -87,4 +87,12 @@ function enableButton(button) {
 function disableButton(button) {
   button.disabled = true;
   button.classList.add("disabled-button");
+}
+
+export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
+  const TEST = event.target.closest("#trash-icon-span").getAttribute("data-id");
+
+  tweets_array = tweets_array.filter(tweet => tweet.id !== TEST);
+
+  displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
 }

@@ -26,13 +26,13 @@ CLEAR_TWEETS_BUTTON.addEventListener("click", () => {
 })
 
 TWEET_LIST_WRAPPER.addEventListener("click", (event) => {
-  const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-span"); // si se hace clic en cualquier elemento cuyo padre sea #trash-icon-span se completa el evento
+  /* const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-span"); // si se hace clic en cualquier elemento cuyo padre sea #trash-icon-span se completa el evento
   if (CLICKED_TRASH_ICON) {
     console.log(`test ${Date.now()}`);
-  }
-
-  /* const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-svg");
-  if (CLICKED_TRASH_ICON) {
-    
   } */
+
+  const CLICKED_TRASH_ICON = event.target.closest("#trash-icon-svg");
+  if (CLICKED_TRASH_ICON) {
+    functions.handleTweetListWrapperClick(event, TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON);
+  }
 })
