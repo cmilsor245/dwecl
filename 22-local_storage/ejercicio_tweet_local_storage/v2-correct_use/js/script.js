@@ -15,9 +15,10 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 UPLOAD_TWEET_BUTTON.addEventListener("click", () => {
-  functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT);
+  functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON);
 })
 
 CLEAR_TWEETS_BUTTON.addEventListener("click", () => {
-  
+  functions.clearTweets(TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, tweets_array, TRASH_ICON, TWEET_INPUT);
+  tweets_array = functions.clearTweets(TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, tweets_array, TRASH_ICON, TWEET_INPUT);
 })
