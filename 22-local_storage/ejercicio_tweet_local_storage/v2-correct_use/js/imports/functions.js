@@ -43,7 +43,7 @@ export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_el
 
       displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
 
-      localStorage.setItem("tweets", JSON.stringify(tweets_array));
+      saveToLocalStorage(tweets_array);
 
       resetInput(tweet_input);
     } else {
@@ -104,7 +104,13 @@ function disableButton(button) {
 export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
   const TWEET_TO_REMOVE_ID = event.target.closest("#trash-icon-span").getAttribute("data-id");
 
-  /* tweets_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
+  let new_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
 
-  displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable); */
+  displayTweets(new_array, trash_icon, tweet_list_element, buttonToEnable);
+
+  saveToLocalStorage(new_array);
+}
+
+function saveToLocalStorage(tweets_array) {
+  localStorage.setItem("tweets", JSON.stringify(tweets_array));
 }
