@@ -33,18 +33,22 @@ function clearTweetList(tweet_list_element) {
 
 export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
   if (!emptyInput(tweet_input)) {
-    const UNIQUE_ID = Date.now();
-    const TWEET_ELEMENT = {
-      id: UNIQUE_ID,
-      text: tweet_input.value
+    if (correctInputLength(tweet_input)) {
+      const UNIQUE_ID = Date.now();
+      const TWEET_ELEMENT = {
+        id: UNIQUE_ID,
+        text: tweet_input.value
+      }
+      tweets_array.push(TWEET_ELEMENT);
+
+      displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
+
+      localStorage.setItem("tweets", JSON.stringify(tweets_array));
+
+      resetInput(tweet_input);
+    } else {
+      alert("El tweet es demasiado largo");
     }
-    tweets_array.push(TWEET_ELEMENT);
-
-    displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
-
-    localStorage.setItem("tweets", JSON.stringify(tweets_array));
-
-    resetInput(tweet_input);
   } else {
     alert("No se puede enviar un tweet vacío");
   }
@@ -52,6 +56,14 @@ export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_el
 
 function emptyInput(tweet_input) {
   if (tweet_input.value === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function correctInputLength(tweet_input) {
+  if (tweet_input.value.length <= 35) {
     return true;
   } else {
     return false;
@@ -92,7 +104,7 @@ function disableButton(button) {
 export function handleTweetListWrapperClick(event, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
   const TWEET_TO_REMOVE_ID = event.target.closest("#trash-icon-span").getAttribute("data-id");
 
-  tweets_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
+  /* tweets_array = tweets_array.filter(tweet => tweet.id !== TWEET_TO_REMOVE_ID);
 
-  displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable);
+  displayTweets(tweets_array, trash_icon, tweet_list_element, buttonToEnable); */
 }
