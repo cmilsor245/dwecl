@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>task list version 1.0</title>
+    <link rel = "stylesheet" href = "css/style.css" />
+    <script src = "js/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>task list</h1>
+
+      <form id = "new-task-form">
+        <input
+          type = "text"
+          id = "new-task-input"
+          placeholder = "What do you have planned?"
+        />
+        <input
+          type = "submit"
+          id = "new-task-submit"
+          value = "Add task"
+        />
+      </form>
+    </header>
+
+    <main>
+      <section class = "task-list">
+        <h2>tasks</h2>
+
+        <div id = "tasks">
+          <div class = "task">
+            <div class = "content">
+              <input
+                type = "text"
+                class = "text"
+                value = "My shiny task"
+                readonly
+              />
+            </div>
+
+            <div class = "actions">
+              <button class = "edit">edit</button>
+              <button class = "delete">delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
