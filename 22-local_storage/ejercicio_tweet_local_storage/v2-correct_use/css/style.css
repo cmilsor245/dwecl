@@ -186,3 +186,21 @@ li {
   text-transform: capitalize;
   text-align: center;
 }
+
+#incorrect-title {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--twitter-red);
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 4px;
+  border: 2px solid var(--twitter-light-red);
+  color: var(--twitter-white);
+  font-family: "mollen personal use-bold";
+  padding: 10px;
+}
+
+.hidden-footer {
+  display: none;
+}

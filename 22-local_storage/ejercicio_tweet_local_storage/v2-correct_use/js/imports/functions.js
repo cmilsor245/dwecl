@@ -31,7 +31,7 @@ function clearTweetList(tweet_list_element) {
   }
 }
 
-export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable) {
+export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_element, buttonToEnable, error_display_element) {
   if (!emptyInput(tweet_input)) {
     if (correctInputLength(tweet_input)) {
       const UNIQUE_ID = Date.now();
@@ -47,10 +47,10 @@ export function uploadTweet(tweet_input, tweets_array, trash_icon, tweet_list_el
 
       resetInput(tweet_input);
     } else {
-      alert("El tweet es demasiado largo");
+      displayError("la longitud del tweet no puede superar los 35 caracteres", error_display_element);
     }
   } else {
-    alert("No se puede enviar un tweet vacío");
+    displayError("el tweet no puede estar vacío", error_display_element);
   }
 }
 
@@ -125,4 +125,14 @@ export function handleTweetListWrapperClick(event, tweets_array, trash_icon, twe
 
 function saveToLocalStorage(tweets_array) {
   localStorage.setItem("tweets", JSON.stringify(tweets_array));
+}
+
+function displayError(message, error_display_element) {
+  error_display_element.textContent = message;
+  error_display_element.classList.remove("hidden-footer");
+
+  setTimeout(function() {
+    error_display_element.textContent = "";
+    error_display_element.classList.add("hidden-footer");
+  }, 2870);
 }

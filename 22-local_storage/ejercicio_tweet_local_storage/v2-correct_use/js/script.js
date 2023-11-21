@@ -9,6 +9,8 @@ const TWEET_LIST_ELEMENT = document.querySelector("#tweet-list-element");
 
 const TRASH_ICON = "<svg id = \"trash-icon-svg\" xmlns = \"http://www.w3.org/2000/svg\" width = \"24\" height = \"24\" viewBox = \"0 0 24 24\"><g fill = \"none\"><path fill = \"red\" d = \"M8 21h8a2 2 0 0 0 2-2V7H6v12a2 2 0 0 0 2 2Z\" opacity = \".16\"/><path stroke = \"red\" stroke-linecap = \"round\" stroke-linejoin = \"round\" stroke-width = \"2\" d = \"M14 11v6m-4-6v6M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7M4 7h16M7 7l2-4h6l2 4\"/></g></svg>";
 
+const ERROR_DISPLAY_ELEMENT = document.querySelector("#incorrect-title");
+
 let tweets_array = functions.loadFromLocalStorage(CLEAR_TWEETS_BUTTON);
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -17,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
 })
 
 UPLOAD_TWEET_BUTTON.addEventListener("click", () => {
-  functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON);
+  functions.uploadTweet(TWEET_INPUT, tweets_array, TRASH_ICON, TWEET_LIST_ELEMENT, CLEAR_TWEETS_BUTTON, ERROR_DISPLAY_ELEMENT);
 })
 
 CLEAR_TWEETS_BUTTON.addEventListener("click", () => {
