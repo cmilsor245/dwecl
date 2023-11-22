@@ -1,5 +1,9 @@
 const ITEMS_ARRAY = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : [];
 
+console.log(ITEMS_ARRAY);
+
+document.querySelector();
+
 function displayDate() {
   let date = new Date();
   date = date.toString().split(" ");
