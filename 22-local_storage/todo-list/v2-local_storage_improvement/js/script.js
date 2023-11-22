@@ -38,7 +38,7 @@ function displayItems() {
 function activateDeleteListeners() {
   let delete_btn = document.querySelectorAll(".delete-btn");
   delete_btn.forEach((btn, i) => {
-    btn.addEventListener("click", (e) => {deleteItem(i)});
+    btn.addEventListener("click", () => {deleteItem(i)});
   })
 }
 
