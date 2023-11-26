@@ -18,7 +18,7 @@ BUTTONS_CONTAINER.addEventListener("click", async (event) => {
 async function obtainTXT() {
   const DATA = await fetch("data/data.txt");
   const DATA_TEXT = await DATA.text();
-  CONTENT_ELEMENT.innerHTML = DATA_TEXT;
+  CONTENT_ELEMENT.innerHTML = `<pre>${DATA_TEXT}</pre>`;
 }
 
 async function obtainJSON(file) {
