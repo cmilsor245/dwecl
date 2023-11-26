@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Juan",
-    "company": "Código con Juan",
-    "job": "Desarrollador Web"
+    "name": "juan",
+    "company": "código con juan",
+    "job": "desarrollador web"
   },
   {
     "id": 2,
-    "name": "Alejandra",
-    "company": "Código con Juan",
-    "job": "Diseñadora"
+    "name": "alejandra",
+    "company": "código con juan",
+    "job": "diseñadora"
   },
   {
     "id": 3,
-    "name": "Pedro",
-    "company": "Código con Juan",
-    "job": "Aplicaciones Móviles"
+    "name": "pedro",
+    "company": "código con juan",
+    "job": "aplicaciones móviles"
   }
 ]

@@ -1,5 +1,5 @@
 const BUTTONS_CONTAINER = document.querySelector("#buttons-container");
-const CONTENT = document.querySelector("#content");
+const CONTENT_ELEMENT = document.querySelector("#content");
 
 BUTTONS_CONTAINER.addEventListener("click", async (event) => {
   const BUTTON = event.target;
@@ -14,3 +14,15 @@ BUTTONS_CONTAINER.addEventListener("click", async (event) => {
     await obtainAPI();
   }
 });
+
+async function obtainTXT() {
+  const DATA = await fetch("data/data.txt");
+  const DATA_TEXT = await DATA.text();
+  CONTENT_ELEMENT.innerHTML = DATA_TEXT;
+}
+
+async function obtainJSON(file) {
+  const DATA = await fetch(`data/${file}.json`);
+  const DATA_JSON = await DATA.json();
+  CONTENT_ELEMENT.innerHTML = `<pre>${JSON.stringify(DATA_JSON, null, 2)}</pre>`;
+}
