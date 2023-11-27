@@ -7,11 +7,11 @@ BUTTONS_CONTAINER.addEventListener("click", async (event) => {
   if (BUTTON.id === "txt-button") {
     await obtainTXT();
   } else if (BUTTON.id === "object-button") {
-    await obtainJSON("employee");
+    await obtainFetch("employee");
   } else if (BUTTON.id === "array-button") {
-    await obtainJSON("employees");
+    await obtainFetch("employees");
   } else if (BUTTON.id === "api-button") {
-    await obtainAPI();
+    await obtainFetch("https://picsum.photos/list");
   }
 });
 
@@ -21,8 +21,8 @@ async function obtainTXT() {
   CONTENT_ELEMENT.innerHTML = `<pre>${DATA_TEXT}</pre>`;
 }
 
-async function obtainJSON(file) {
-  const DATA = await fetch(`data/${file}.json`);
+async function obtainFetch(source) {
+  const DATA = await fetch(`data/${source}.json`);
   const DATA_JSON = await DATA.json();
   CONTENT_ELEMENT.innerHTML = `<pre>${JSON.stringify(DATA_JSON, null, 2)}</pre>`;
 }
