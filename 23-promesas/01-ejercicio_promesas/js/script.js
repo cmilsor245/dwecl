@@ -76,8 +76,8 @@ function displayArray(elements) {
           <p><span class = "attribute-title">author</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.author}</span></p>
           <p><span class = "attribute-title">width</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.width}</span></p>
           <p><span class = "attribute-title">height</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.height}</span></p>
-          <p><a href = "$<span>{item.url}</span>" target = "_blank">visitar post</a></p>
-          <p><a href = "$<span>{item.download_url}</span>" target = "_blank">ver imagen</a></p>
+          <p><a href = "${item.url}" target = "_blank">visitar post</a></p>
+          <p><a href = "${item.download_url}" target = "_blank">ver imagen</a></p>
         </div>
       `;
     } else {
