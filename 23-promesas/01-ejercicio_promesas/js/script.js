@@ -12,6 +12,8 @@ BUTTONS_CONTAINER.addEventListener("click", (event) => {
     obtainFetch("employees");
   } else if (BUTTON.id === "api-button") {
     obtainFetch("https://picsum.photos/v2/list");
+  } else if (BUTTON.id === "clear-button") {
+    clearContentElement(CONTENT_ELEMENT);
   }
 });
 
@@ -46,14 +48,44 @@ async function obtainFetch(source) {
 function displayEmployee(employee) {
   clearContentElement(CONTENT_ELEMENT);
 
-  CONTENT_ELEMENT.innerHTML = `<pre>${JSON.stringify(employee, null, 2)}</pre>`;
+  CONTENT_ELEMENT.innerHTML = `
+    <br />
+    id -> ${employee.id}<br />
+    name -> ${employee.name}<br />
+    company -> ${employee.company}<br />
+    job -> ${employee.job}
+  `;
 }
 
 function displayArray(elements) {
   clearContentElement(CONTENT_ELEMENT);
 
   elements.forEach((element) => {
-    CONTENT_ELEMENT.innerHTML += `<pre>${JSON.stringify(element, null, 2)}</pre>`;
+    let content;
+
+    if ("download_url" in element) {
+      content = `
+        <br />
+        id -> ${element.id}<br />
+        author -> ${element.author}<br />
+        width -> ${element.width}<br />
+        height -> ${element.height}<br />
+        url -> <a href = "${element.url}" target = "_blank">${element.url}</a><br />
+        download_url -> <a href = "${element.download_url}" target = "_blank">${element.download_url}</a><br /><br />
+        ----------------------------------------------------<br />
+      `;
+    } else {
+      content = `
+        <br />
+        id -> ${element.id}<br />
+        name -> ${element.name}<br />
+        company -> ${element.company}<br />
+        job -> ${element.job}<br /><br />
+        ----------------------------------------------------<br />
+      `;
+    }
+
+    CONTENT_ELEMENT.innerHTML += content;
   });
 }
 
