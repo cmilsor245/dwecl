@@ -60,27 +60,27 @@ function displayEmployee(employee) {
 function displayArray(elements) {
   clearContentElement(CONTENT_ELEMENT);
 
-  elements.forEach((element) => {
+  elements.forEach((item) => {
     let content;
 
-    if ("download_url" in element) {
+    if ("download_url" in item) { // esto diferencia el array de objetos de la api, ya que los objetos del archivo local no tienen el atributo "download_url"
       content = `
         <br />
-        id -> ${element.id}<br />
-        author -> ${element.author}<br />
-        width -> ${element.width}<br />
-        height -> ${element.height}<br />
-        url -> <a href = "${element.url}" target = "_blank">${element.url}</a><br />
-        download_url -> <a href = "${element.download_url}" target = "_blank">${element.download_url}</a><br /><br />
+        id -> ${item.id}<br />
+        author -> ${item.author}<br />
+        width -> ${item.width}<br />
+        height -> ${item.height}<br />
+        url -> <a href = "${item.url}" target = "_blank">${item.url}</a><br />
+        download_url -> <a href = "${item.download_url}" target = "_blank">${item.download_url}</a><br /><br />
         ----------------------------------------------------<br />
       `;
     } else {
       content = `
         <br />
-        id -> ${element.id}<br />
-        name -> ${element.name}<br />
-        company -> ${element.company}<br />
-        job -> ${element.job}<br /><br />
+        id -> ${item.id}<br />
+        name -> ${item.name}<br />
+        company -> ${item.company}<br />
+        job -> ${item.job}<br /><br />
         ----------------------------------------------------<br />
       `;
     }
