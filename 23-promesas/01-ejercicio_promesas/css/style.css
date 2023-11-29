@@ -1,12 +1,29 @@
 :root {
-  --page-bg: #dbdbdb;
+  --page-bg: #d4d4d4;
   --dark: #111111;
   --light: #ffffff;
+  --shadow: #080808;
+  --card-bg: #f5f5f5;
 }
 
 @font-face {
   font-family: "plasmatic";
   src: url("../fonts/plasmatic/regular.ttf");
+}
+
+@font-face {
+  font-family: "racing-foner regular";
+  src: url("../fonts/racing-foner/regular.otf");
+}
+
+@font-face {
+  font-family: "racing-foner bold";
+  src: url("../fonts/racing-foner/bold.otf");
+}
+
+@font-face {
+  font-family: "ventera";
+  src: url("../fonts/ventera/regular.otf");
 }
 
 * {
@@ -22,16 +39,72 @@ body {
   background-color: var(--page-bg);
 }
 
-h1 {
-  color: var(--dark);
+h1, #buttons-container, #content {
   width: fit-content;
   margin: 0 auto;
   text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  color: var(--dark);
   font-size: 3rem;
   text-transform: uppercase;
   font-family: "plasmatic";
 }
 
-.hidden {
+#content {
+  border-radius: 3px;
+  box-shadow: 0 0 10px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  min-width: 480px;
+}
+
+#content div {
+  border: 2px dashed var(--dark);
+  border-radius: 60px;
+}
+
+img {
+  position: relative;
+  top: 5px;
+}
+
+p {
+  text-transform: capitalize;
+}
+
+.attribute-title {
+  font-family: "racing-foner regular";
+  letter-spacing: 1px;
+  font-size: 21px;
+}
+
+.attribute-value {
+  font-family: "ventera";
+  letter-spacing: 1px;
+}
+
+#content.hidden {
   display: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+  display: inline-block;
+}
+
+a:hover {
+  transform: scale(1.2);
+}
+
+a:active {
+  transform: scale(.9);
 }

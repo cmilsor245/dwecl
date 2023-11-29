@@ -54,11 +54,12 @@ function displayEmployee(employee) {
   clearContentElement(CONTENT_ELEMENT);
 
   CONTENT_ELEMENT.innerHTML = `
-    <br />
-    id -> ${employee.id}<br />
-    name -> ${employee.name}<br />
-    company -> ${employee.company}<br />
-    job -> ${employee.job}
+    <div>
+      <p><span class = "attribute-title">id</span><img src = "icons/right-arrow.svg" /><span class = "attribute-value">${employee.id}</span></p>
+      <p><span class = "attribute-title">name</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${employee.name}</span></p>
+      <p><span class = "attribute-title">company</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${employee.company}</span></p>
+      <p><span class = "attribute-title">job</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${employee.job}</span></p>
+    </div>
   `;
 }
 
@@ -70,23 +71,23 @@ function displayArray(elements) {
 
     if ("download_url" in item) { // esto diferencia el array de objetos de la api, ya que los objetos del archivo local no tienen el atributo "download_url"
       content = `
-        <br />
-        id -> ${item.id}<br />
-        author -> ${item.author}<br />
-        width -> ${item.width}<br />
-        height -> ${item.height}<br />
-        url -> <a href = "${item.url}" target = "_blank">${item.url}</a><br />
-        download_url -> <a href = "${item.download_url}" target = "_blank">${item.download_url}</a><br /><br />
-        ----------------------------------------------------<br />
+        <div>
+          <p><span class = "attribute-title">id</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.id}</span></p>
+          <p><span class = "attribute-title">author</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.author}</span></p>
+          <p><span class = "attribute-title">width</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.width}</span></p>
+          <p><span class = "attribute-title">height</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.height}</span></p>
+          <p><a href = "$<span>{item.url}</span>" target = "_blank">visitar post</a></p>
+          <p><a href = "$<span>{item.download_url}</span>" target = "_blank">ver imagen</a></p>
+        </div>
       `;
     } else {
       content = `
-        <br />
-        id -> ${item.id}<br />
-        name -> ${item.name}<br />
-        company -> ${item.company}<br />
-        job -> ${item.job}<br /><br />
-        ----------------------------------------------------<br />
+        <div>
+          <p><span class = "attribute-title">id</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.id}</span></p>
+          <p><span class = "attribute-title">name</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.name}</span></p>
+          <p><span class = "attribute-title">company</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.company}</span></p>
+          <p><span class = "attribute-title">job</span><img src = "icons/right-arrow.svg"  /><span class = "attribute-value">${item.job}</span></p>
+        </div>
       `;
     }
 
