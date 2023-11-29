@@ -14,10 +14,13 @@ BUTTONS_CONTAINER.addEventListener("click", (event) => {
     obtainFetch("https://picsum.photos/v2/list");
   } else if (BUTTON.id === "clear-button") {
     clearContentElement(CONTENT_ELEMENT);
+    addHiddenClass(element);
   }
 });
 
 async function obtainTXT() {
+  removeHiddenClass(CONTENT_ELEMENT);
+
   const DATA = await fetch("data/data.txt");
   const DATA_TEXT = await DATA.text();
 
@@ -27,6 +30,8 @@ async function obtainTXT() {
 }
 
 async function obtainFetch(source) {
+  removeHiddenClass(CONTENT_ELEMENT);
+
   let url;
 
   if (source.startsWith("https")) {
@@ -93,4 +98,12 @@ function clearContentElement(element) {
   while (element.firstChild) {
     element.removeChild(element.firstChild);
   }
+}
+
+function removeHiddenClass(element) {
+  element.classList.remove("hidden");
+}
+
+function addHiddenClass(element) {
+  element.classList.add("hidden");
 }
