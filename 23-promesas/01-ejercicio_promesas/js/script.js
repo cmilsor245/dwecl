@@ -14,7 +14,7 @@ BUTTONS_CONTAINER.addEventListener("click", (event) => {
     obtainFetch("https://picsum.photos/v2/list");
   } else if (BUTTON.id === "clear-button") {
     clearContentElement(CONTENT_ELEMENT);
-    addHiddenClass(element);
+    addHiddenClass(CONTENT_ELEMENT);
   }
 });
 

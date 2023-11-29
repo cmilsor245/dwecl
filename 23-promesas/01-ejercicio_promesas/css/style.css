@@ -4,6 +4,11 @@
   --light: #ffffff;
 }
 
+@font-face {
+  font-family: "plasmatic";
+  src: url("../fonts/plasmatic/regular.ttf");
+}
+
 * {
   cursor: default;
 }
@@ -15,6 +20,16 @@
 
 body {
   background-color: var(--page-bg);
+}
+
+h1 {
+  color: var(--dark);
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-family: "plasmatic";
 }
 
 .hidden {
