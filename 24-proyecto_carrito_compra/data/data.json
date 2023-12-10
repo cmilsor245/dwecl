@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1",
+    "src": "img/curso1.jpg",
+    "title": "HTML5, CSS3, JavaScript para Principiantes",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "2",
+    "src": "img/curso2.jpg",
+    "title": "Curso de Comida Vegetariana",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "3",
+    "src": "img/curso3.jpg",
+    "title": "Guitarra para Principiantes",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "4",
+    "src": "img/curso4.jpg",
+    "title": "Huerto en tu casa",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "5",
+    "src": "img/curso5.jpg",
+    "title": "Decoración con productos de tu hogar",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "6",
+    "src": "img/curso1.jpg",
+    "title": "Diseño Web para Principiantes",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "7",
+    "src": "img/curso2.jpg",
+    "title": "Comida Mexicana para principiantes",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "8",
+    "src": "img/curso3.jpg",
+    "title": "Estudio Musical en tu casa",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "9",
+    "src": "img/curso4.jpg",
+    "title": "Cosecha tus propias frutas y verduras",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "10",
+    "src": "img/curso5.jpg",
+    "title": "Prepara galletas caseras",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "11",
+    "src": "img/curso1.jpg",
+    "title": "JavaScript Moderno con ES6",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  },
+  {
+    "id": "12",
+    "src": "img/curso2.jpg",
+    "title": "100 Recetas de Comida Natural",
+    "author": "Juan Pedro",
+    "previous_price": "$200",
+    "current_price": "$15"
+  }
+]
