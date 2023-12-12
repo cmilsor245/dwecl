@@ -135,3 +135,22 @@ export function emptyCartDynamically(table, array) {
 
   localStorage.clear()
 }
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 4 -> eliminar curso del carrito
+export function deleteCourse(event, array) {
+  const CLICKED_ELEMENT = event.target
+
+  if (CLICKED_ELEMENT.classList.contains("borrar-curso")) {
+    const TARGET_ID = CLICKED_ELEMENT.dataset.id
+    const TARGET_ROW = CLICKED_ELEMENT.parentElement.parentElement
+    TARGET_ROW.remove()
+
+    const INDEX = array.findIndex(item => item[4] === TARGET_ID)
+    if (INDEX !== -1) {
+      array.splice(INDEX, 1)
+      localStorage.setItem("selected_courses", JSON.stringify(array))
+    }
+  }
+}

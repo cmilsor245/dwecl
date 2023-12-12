@@ -41,3 +41,8 @@ EMPTY_CART_BUTTON.addEventListener("click", () => {
   // hito 5 -> vaciar carrito
   functions.emptyCartDynamically(CART_TABLE, SELECTED_COURSES_ARRAY)
 })
+
+CART_TABLE.addEventListener("click", (event) => {
+  // hito 4 -> eliminar curso del carrito
+  functions.deleteCourse(event, SELECTED_COURSES_ARRAY)
+})
