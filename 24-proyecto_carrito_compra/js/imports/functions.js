@@ -53,7 +53,7 @@ export async function fetchData(json_path, list_element) {
 
 /* -------------------------------------------------------------------------------------------------------- */
 
-
+// hito 3 -> agregar curso seleccionado al carrito
 export function addToCart(event, table, array) {
   const CLICKED_ELEMENT = event.target
 
