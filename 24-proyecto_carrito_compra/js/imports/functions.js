@@ -1,6 +1,9 @@
 // hito 7 -> local storage
-export function loadCart() {
-  
+export function loadCart(array) {
+  const SAVED_COURSES = localStorage.getItem("selected_courses")
+  if (SAVED_COURSES) {
+    array.push(...JSON.parse(SAVED_COURSES))
+  }
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -63,7 +66,7 @@ export function addToCart(event, table, array) {
     /* ---------------------------------- */
 
     // hito 7 -> local storage
-    
+    localStorage.setItem("selected_courses", JSON.stringify(array))
 
     /* ---------------------------------- */
 
@@ -71,7 +74,7 @@ export function addToCart(event, table, array) {
     // hito 6 -> mejora del hito 3 -> se incrementa el contador en lugar de replicar el elemento
     const EXISTING_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`) // creo una constante para comprobar si existe una fila con un atributo "data-id" igual a TARGET_ID, en cuyo caso ya hay un producto con ese id en el carrito y no debe crearse otra fila, sino aumentar la cantidad
     if (EXISTING_ROW) {
-      const QUANTITY_CELL = EXISTING_ROW.querySelector('td:nth-child(4)') // con esto de aquí consigo la cuarta columna de mi tabla, que en mi caso corresponde a la cantidad del producto (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
+      const QUANTITY_CELL = EXISTING_ROW.querySelector("td:nth-child(4)") // con esto de aquí consigo la cuarta columna de mi tabla, que en mi caso corresponde a la cantidad del producto (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
       QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) + 1 // * la primera vez que creo la fila el contenido de esta celda es texto plano ("1") así que la forma de hacerlo que me fue más fácil es pasarlo a entero y sumarle 1
     } else {
       const ROW = createRow(CARD_INFO_ARRAY)
