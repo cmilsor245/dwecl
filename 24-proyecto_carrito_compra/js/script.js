@@ -44,5 +44,5 @@ EMPTY_CART_BUTTON.addEventListener("click", () => {
 
 CART_TABLE.addEventListener("click", (event) => {
   // hito 4 -> eliminar curso del carrito
-  functions.deleteCourse(event, SELECTED_COURSES_ARRAY)
+  functions.deleteCourse(event, SELECTED_COURSES_ARRAY, CART_TABLE)
 })

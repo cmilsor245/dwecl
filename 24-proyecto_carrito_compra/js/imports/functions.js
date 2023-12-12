@@ -139,7 +139,7 @@ export function emptyCartDynamically(table, array) {
 /* -------------------------------------------------------------------------------------------------------- */
 
 // hito 4 -> eliminar curso del carrito
-export function deleteCourse(event, array) {
+export function deleteCourse(event, array, table) {
   const CLICKED_ELEMENT = event.target
 
   if (CLICKED_ELEMENT.classList.contains("borrar-curso")) {
@@ -147,17 +147,31 @@ export function deleteCourse(event, array) {
 
     /* -------------------------- */
 
-    // para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
-    // const TARGET_ROW = CLICKED_ELEMENT.parentElement.parentElement
-    // TARGET_ROW.remove()
+    // * para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
+    /*
+    array = array.filter(item => item[4] !== TARGET_ID);
+    localStorage.setItem("selected_courses", JSON.stringify(array))
+
+    const TARGET_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`)
+    TARGET_ROW.remove()
+    */
 
     /* -------------------------- */
 
-    // para eliminar una única ocurrencia del elemento a borrar, es decir, bajo la cantidad
+    // * para eliminar una única ocurrencia del elemento a borrar, es decir, bajo la cantidad
     const INDEX = array.findIndex(item => item[4] === TARGET_ID)
     if (INDEX !== -1) {
       array.splice(INDEX, 1)
       localStorage.setItem("selected_courses", JSON.stringify(array))
+
+      const TARGET_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`)
+      const QUANTITY_CELL = TARGET_ROW.querySelector("td:nth-child(4)") // gracias a que tengo la id en un atributo "data-id" en cada elemento "tr", puedo almacenar esa fila y acceder a su cuarta columna, que corresponde a la cantidad del producto
+
+      if (parseInt(QUANTITY_CELL.textContent) > 1) { // si la cantidad es mayor que 1, no elimino la fila sino que resto un valor a la cantidad
+        QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) - 1
+      } else { // si la cantidad es igual a 1, elimino la fila por completo
+        TARGET_ROW.remove()
+      }
     }
   }
 }
