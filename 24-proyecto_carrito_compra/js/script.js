@@ -7,7 +7,21 @@ import * as functions from "./imports/functions.js"
 const CART_TABLE = document.querySelector("#lista-carrito tbody")
 const EMPTY_CART_BUTTON = document.querySelector("#vaciar-carrito")
 const COURSES_LIST_ELEMENT = document.querySelector("#lista-cursos")
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 9 -> json - cards dinámicas -> ruta del archivo de donde se sacan los atributos de cada card
 const JSON_PATH = "data/data.json"
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 3 -> agregar curso seleccionado al carrito -> array local de los cursos seleccionados
+const SELECTED_COURSES_ARRAY = []
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 7 -> local storage
+functions.loadCart()
 
 /* -------------------------------------------------------------------------------------------------------- */
 
@@ -18,9 +32,11 @@ functions.fetchData(JSON_PATH, COURSES_LIST_ELEMENT)
 
 // hito 2 -> event listeners
 COURSES_LIST_ELEMENT.addEventListener("click", (event) => {
-  functions.addToCart(event, CART_TABLE)
+  // hito 3 -> agregar curso seleccionado al carrito
+  functions.addToCart(event, CART_TABLE, SELECTED_COURSES_ARRAY)
 })
 
 EMPTY_CART_BUTTON.addEventListener("click", () => {
-  functions.emptyCartDynamically(CART_TABLE)
+  // hito 5 -> vaciar carrito
+  functions.emptyCartDynamically(CART_TABLE, SELECTED_COURSES_ARRAY)
 })

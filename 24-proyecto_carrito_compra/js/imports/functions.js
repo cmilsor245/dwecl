@@ -1,3 +1,10 @@
+// hito 7 -> local storage
+export function loadCart() {
+  
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
 // hito 9 -> json - cards dinámicas
 export async function fetchData(json_path, list_element) {
   try {
@@ -38,10 +45,11 @@ export async function fetchData(json_path, list_element) {
 /* -------------------------------------------------------------------------------------------------------- */
 
 
-export function addToCart(event, table) {
+export function addToCart(event, table, array) {
   const CLICKED_ELEMENT = event.target
 
   if (CLICKED_ELEMENT.classList.contains("agregar-carrito")) {
+    // hito 3 -> agregar curso seleccionado al carrito -> actualizar array local
     const TARGET_ID = CLICKED_ELEMENT.dataset.id
 
     const PARENT_ELEMENT = CLICKED_ELEMENT.parentElement.parentElement
@@ -50,6 +58,17 @@ export function addToCart(event, table) {
 
     CARD_INFO_ARRAY.push(TARGET_ID)
 
+    array.push(CARD_INFO_ARRAY)
+
+    /* ---------------------------------- */
+
+    // hito 7 -> local storage
+    
+
+    /* ---------------------------------- */
+
+    // hito 3 -> agregar curso seleccionado al carrito -> imprimir curso seleccionado en el carrito visualmente
+    // hito 6 -> mejora del hito 3 -> se incrementa el contador en lugar de replicar el elemento
     const EXISTING_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`) // creo una constante para comprobar si existe una fila con un atributo "data-id" igual a TARGET_ID, en cuyo caso ya hay un producto con ese id en el carrito y no debe crearse otra fila, sino aumentar la cantidad
     if (EXISTING_ROW) {
       const QUANTITY_CELL = EXISTING_ROW.querySelector('td:nth-child(4)') // con esto de aquí consigo la cuarta columna de mi tabla, que en mi caso corresponde a la cantidad del producto (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
@@ -88,8 +107,15 @@ function createRow(card_info_array) {
   return ROW
 }
 
-export function emptyCartDynamically(table) {
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 5 -> vaciar carrito -> eliminación de los elementos de la tabla de forma dinámica y eficiente, eliminación de los objetos dentro del array local, y eliminación de los registros en el local storage
+export function emptyCartDynamically(table, array) {
   while (table.firstChild) {
     table.removeChild(table.firstChild)
   }
+
+  array.length = 0
+
+  localStorage.clear()
 }
