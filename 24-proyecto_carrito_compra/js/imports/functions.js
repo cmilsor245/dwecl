@@ -8,16 +8,8 @@ export function loadCart(array) {
 
 export function displayStoredCourses(table, array) {
   array.forEach((cardInfoArray) => {
-    const EXISTING_ROW = table.querySelector(`tr[data-id="${cardInfoArray[4]}"]`);
-
-    if (EXISTING_ROW) {
-      const QUANTITY_CELL = EXISTING_ROW.querySelector("td:nth-child(4)");
-      QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) + 1;
-    } else {
-      const ROW = createRow(cardInfoArray);
-      table.appendChild(ROW);
-    }
-  });
+    updateExistingRow(table, cardInfoArray[4], cardInfoArray) // le paso la id de la card actual para evitar duplicidad
+  })
 }
 
 /* -------------------------------------------------------------------------------------------------------- */
@@ -68,32 +60,21 @@ export function addToCart(event, table, array) {
   if (CLICKED_ELEMENT.classList.contains("agregar-carrito")) {
     // hito 3 -> agregar curso seleccionado al carrito -> actualizar array local
     const TARGET_ID = CLICKED_ELEMENT.dataset.id
-
     const PARENT_ELEMENT = CLICKED_ELEMENT.parentElement.parentElement
-
     const CARD_INFO_ARRAY = obtainCardInfo(PARENT_ELEMENT)
 
     CARD_INFO_ARRAY.push(TARGET_ID)
-
     array.push(CARD_INFO_ARRAY)
 
-    /* ---------------------------------- */
+    /* -------------------------- */
 
     // hito 7 -> local storage
     localStorage.setItem("selected_courses", JSON.stringify(array))
 
-    /* ---------------------------------- */
+    /* -------------------------- */
 
-    // hito 3 -> agregar curso seleccionado al carrito -> imprimir curso seleccionado en el carrito visualmente
     // hito 6 -> mejora del hito 3 -> se incrementa el contador en lugar de replicar el elemento
-    const EXISTING_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`) // creo una constante para comprobar si existe una fila con un atributo "data-id" igual a TARGET_ID, en cuyo caso ya hay un producto con ese id en el carrito y no debe crearse otra fila, sino aumentar la cantidad
-    if (EXISTING_ROW) {
-      const QUANTITY_CELL = EXISTING_ROW.querySelector("td:nth-child(4)") // con esto de aquí consigo la cuarta columna de mi tabla, que en mi caso corresponde a la cantidad del producto (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
-      QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) + 1 // * la primera vez que creo la fila el contenido de esta celda es texto plano ("1") así que la forma de hacerlo que me fue más fácil es pasarlo a entero y sumarle 1
-    } else {
-      const ROW = createRow(CARD_INFO_ARRAY)
-      table.append(ROW)
-    }
+    updateExistingRow(table, TARGET_ID, CARD_INFO_ARRAY) // le paso la id de la card actual para evitar duplicidad
   }
 }
 
@@ -107,6 +88,24 @@ function obtainCardInfo(card_wrapper) {
   return CARD_INFO_ARRAY
 }
 
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 6 -> mejora del hito 3 -> se incrementa el contador en lugar de replicar el elemento
+function updateExistingRow(table, targetId, cardInfoArray) {
+  const EXISTING_ROW = table.querySelector(`tr[data-id="${targetId}"]`) // creo una constante para comprobar si existe una fila con un atributo "data-id" igual a TARGET_ID, en cuyo caso ya hay un producto con ese id en el carrito y no debe crearse otra fila, sino aumentar la cantidad
+
+  if (EXISTING_ROW) {
+    const QUANTITY_CELL = EXISTING_ROW.querySelector("td:nth-child(4)") // con esto de aquí consigo la cuarta columna de mi tabla, que en mi caso corresponde a la cantidad del producto (https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child)
+    QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) + 1 // * la primera vez que creo la fila el contenido de esta celda es texto plano ("1") así que la forma de hacerlo que me fue más fácil es pasarlo a entero y sumarle 1
+  } else {
+    const ROW = createRow(cardInfoArray)
+    table.appendChild(ROW)
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+// hito 3 -> agregar curso seleccionado al carrito
 function createRow(card_info_array) {
   const ROW = document.createElement("tr")
   ROW.setAttribute('data-id', card_info_array[4]) // aquí creo una fila de la tabla con el atributo de la id para que cuando se agrege el mismo producto más de una vez, arriba pueda comprobar si esta fila ya existe y no se repita, sino que se aumente la cantidad de la cuarta columna
