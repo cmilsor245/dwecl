@@ -144,9 +144,16 @@ export function deleteCourse(event, array) {
 
   if (CLICKED_ELEMENT.classList.contains("borrar-curso")) {
     const TARGET_ID = CLICKED_ELEMENT.dataset.id
-    const TARGET_ROW = CLICKED_ELEMENT.parentElement.parentElement
-    TARGET_ROW.remove()
 
+    /* -------------------------- */
+
+    // para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
+    // const TARGET_ROW = CLICKED_ELEMENT.parentElement.parentElement
+    // TARGET_ROW.remove()
+
+    /* -------------------------- */
+
+    // para eliminar una única ocurrencia del elemento a borrar, es decir, bajo la cantidad
     const INDEX = array.findIndex(item => item[4] === TARGET_ID)
     if (INDEX !== -1) {
       array.splice(INDEX, 1)
