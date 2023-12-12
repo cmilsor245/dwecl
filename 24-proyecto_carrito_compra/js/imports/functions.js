@@ -2,7 +2,7 @@
 export function loadCart(array) {
   const SAVED_COURSES = localStorage.getItem("selected_courses")
   if (SAVED_COURSES) {
-    array.push(...JSON.parse(SAVED_COURSES))
+    array.push(...JSON.parse(SAVED_COURSES)) // es lo mismo quee hacer, por ejemplo, un foreach para ir hacieendo push de cada elemento
   }
 }
 
@@ -149,7 +149,7 @@ export function deleteCourse(event, array, table) {
 
     // * para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
     // TODO: si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de una sola ocurrencia
-    // ! mi idea aquí es que si el filter ha resultado en un array totalmente vacío entre por la condición del "if" y se limpie el local storage, pero no lo hace
+    // ! mi idea aquí es que si el filter ha resultado en un array totalmente vacío entre por la condición del if y se limpie el local storage, pero no lo hace
     // ! si se agregan, por ejemplo, dos cursos iguales al carrito, y después otros dos cursos iguales pero diferentes al primero, y se intentan borrar los dos con el botón de borrado de cada uno de ellos en lugar de con el botón de vaciar el carrito, al eliminar el último producto no se limpia el local storage, sino que se vuelven a crear elementos
     /* array = array.filter(item => item[4] !== TARGET_ID)
     if (array.length === 0) {
@@ -171,7 +171,7 @@ export function deleteCourse(event, array, table) {
       localStorage.setItem("selected_courses", JSON.stringify(array))
 
       const TARGET_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`)
-      const QUANTITY_CELL = TARGET_ROW.querySelector("td:nth-child(4)") // gracias a que tengo la id en un atributo "data-id" en cada elemento "tr", puedo almacenar esa fila y acceder a su cuarta columna, que corresponde a la cantidad del producto
+      const QUANTITY_CELL = TARGET_ROW.querySelector("td:nth-child(4)") // gracias a que tengo la id en un atributo "data-id" en cada elemento tr, puedo almacenar esa fila y acceder a su cuarta columna, que corresponde a la cantidad del producto
 
       if (parseInt(QUANTITY_CELL.textContent) > 1) { // si la cantidad es mayor que 1, no elimino la fila sino que resto un valor a la cantidad
         QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) - 1
