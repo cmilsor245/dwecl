@@ -22,7 +22,7 @@ const SELECTED_COURSES_ARRAY = []
 
 // hito 7 -> local storage
 functions.loadCart(SELECTED_COURSES_ARRAY)
-functions.displayStoredCourses(CART_TABLE, SELECTED_COURSES_ARRAY);
+functions.displayStoredCourses(CART_TABLE, SELECTED_COURSES_ARRAY) // función para que se muestren los cursos que se hayan seleccionado y esten guardados en local storage, si es que hay cursos seleccionados
 
 /* -------------------------------------------------------------------------------------------------------- */
 
