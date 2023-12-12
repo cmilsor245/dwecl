@@ -148,18 +148,18 @@ export function deleteCourse(event, array, table) {
     /* -------------------------- */
 
     // * para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
-    /*
-    array = array.filter(item => item[4] !== TARGET_ID);
+    // ! si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de una sola ocurrencia
+    array = array.filter(item => item[4] !== TARGET_ID)
     localStorage.setItem("selected_courses", JSON.stringify(array))
 
     const TARGET_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`)
     TARGET_ROW.remove()
-    */
 
     /* -------------------------- */
 
     // * para eliminar una única ocurrencia del elemento a borrar, es decir, bajo la cantidad
-    const INDEX = array.findIndex(item => item[4] === TARGET_ID)
+    // ! si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de todas las ocurrencias
+    /* const INDEX = array.findIndex(item => item[4] === TARGET_ID)
     if (INDEX !== -1) {
       array.splice(INDEX, 1)
       localStorage.setItem("selected_courses", JSON.stringify(array))
@@ -172,6 +172,6 @@ export function deleteCourse(event, array, table) {
       } else { // si la cantidad es igual a 1, elimino la fila por completo
         TARGET_ROW.remove()
       }
-    }
+    } */
   }
 }
