@@ -22,6 +22,7 @@ const SELECTED_COURSES_ARRAY = []
 
 // hito 7 -> local storage
 functions.loadCart(SELECTED_COURSES_ARRAY)
+functions.displayStoredCourses(CART_TABLE, SELECTED_COURSES_ARRAY);
 
 /* -------------------------------------------------------------------------------------------------------- */
 

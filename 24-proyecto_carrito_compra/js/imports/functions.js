@@ -6,6 +6,20 @@ export function loadCart(array) {
   }
 }
 
+export function displayStoredCourses(table, array) {
+  array.forEach((cardInfoArray) => {
+    const EXISTING_ROW = table.querySelector(`tr[data-id="${cardInfoArray[4]}"]`);
+
+    if (EXISTING_ROW) {
+      const QUANTITY_CELL = EXISTING_ROW.querySelector("td:nth-child(4)");
+      QUANTITY_CELL.textContent = parseInt(QUANTITY_CELL.textContent) + 1;
+    } else {
+      const ROW = createRow(cardInfoArray);
+      table.appendChild(ROW);
+    }
+  });
+}
+
 /* -------------------------------------------------------------------------------------------------------- */
 
 // hito 9 -> json - cards dinámicas
