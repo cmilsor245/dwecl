@@ -149,12 +149,20 @@ export function deleteCourse(event, array, table) {
 
     // * para eliminar todas las ocurrencias del curso, dándome igual el número de ocurrencias que haya
     // TODO: si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de una sola ocurrencia
-    // ! mi idea aquí es que si el filter ha resultado en un array totalmente vacío entre por la condición del if y se limpie el local storage, pero no lo hace
-    // ! si se agregan, por ejemplo, dos cursos iguales al carrito, y después otros dos cursos iguales pero diferentes al primero, y se intentan borrar los dos con el botón de borrado de cada uno de ellos en lugar de con el botón de vaciar el carrito, al eliminar el último producto no se limpia el local storage, sino que se vuelven a crear elementos
-    array = array.filter(item => item[4] !== TARGET_ID)
+    const INDEXES_TO_REMOVE = [] // creo un array en el que voy a almacenar las posiciones de los elementos a eliminar
+    array.forEach((item, index) => { // recorro el array y guardo las posiciones
+      if (item[4] === TARGET_ID) {
+        INDEXES_TO_REMOVE.push(index)
+      }
+    })
+
+    INDEXES_TO_REMOVE.reverse().forEach(index => { // es totalmente necesario eliminar empezando por la última posición, porque si se empieza por la primera, en la siguiente iteración del forEach los índices han cambiado, ya que todos los elementos han subido una posición - si no utilizo reverse no se me eliminan todas las ocurrencias del producto en el array
+      array.splice(index, 1)
+    })
+
     if (array.length === 0) {
       localStorage.clear()
-    }else {
+    } else {
       localStorage.setItem("selected_courses", JSON.stringify(array))
     }
 

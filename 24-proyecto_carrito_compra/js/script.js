@@ -33,6 +33,8 @@ functions.fetchData(JSON_PATH, COURSES_LIST_ELEMENT)
 
 // hito 2 -> event listeners
 COURSES_LIST_ELEMENT.addEventListener("click", (event) => {
+  event.preventDefault()
+
   // hito 3 -> agregar curso seleccionado al carrito
   functions.addToCart(event, CART_TABLE, SELECTED_COURSES_ARRAY)
 })
