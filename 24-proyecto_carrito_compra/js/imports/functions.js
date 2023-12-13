@@ -151,7 +151,7 @@ export function deleteCourse(event, array, table) {
     // TODO: si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de una sola ocurrencia
     // ! mi idea aquí es que si el filter ha resultado en un array totalmente vacío entre por la condición del if y se limpie el local storage, pero no lo hace
     // ! si se agregan, por ejemplo, dos cursos iguales al carrito, y después otros dos cursos iguales pero diferentes al primero, y se intentan borrar los dos con el botón de borrado de cada uno de ellos en lugar de con el botón de vaciar el carrito, al eliminar el último producto no se limpia el local storage, sino que se vuelven a crear elementos
-    /* array = array.filter(item => item[4] !== TARGET_ID)
+    array = array.filter(item => item[4] !== TARGET_ID)
     if (array.length === 0) {
       localStorage.clear()
     }else {
@@ -159,13 +159,13 @@ export function deleteCourse(event, array, table) {
     }
 
     const TARGET_ROW = table.querySelector(`tr[data-id="${TARGET_ID}"]`)
-    TARGET_ROW.remove() */
+    TARGET_ROW.remove()
 
     /* -------------------------- */
 
     // * para eliminar una única ocurrencia del elemento a borrar, es decir, bajo la cantidad
     // TODO: si se quiere implementar este método, se descomenta el siguiente código y se comenta todo el código que corresponde a la eliminación de todas las ocurrencias
-    const INDEX = array.findIndex(item => item[4] === TARGET_ID)
+    /* const INDEX = array.findIndex(item => item[4] === TARGET_ID)
     if (INDEX !== -1) {
       array.splice(INDEX, 1)
       localStorage.setItem("selected_courses", JSON.stringify(array))
@@ -178,6 +178,6 @@ export function deleteCourse(event, array, table) {
       } else { // si la cantidad es igual a 1, elimino la fila por completo
         TARGET_ROW.remove()
       }
-    }
+    } */
   }
 }
