@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  text-align: center;
+}
+
+input[type = "text"] {
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+input[type = "text"]:focus {
+  border-color: #ff9100;
+  background-color: #f3f3f3;
+}
+
+input[type = "submit"] {
+  background: #3a3a3a;
+  color: white;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+input[type = "submit"]:hover {
+  background: #ff0055;
+  border: 1px solid black;
+  transform: scale(1.03);
+}
+
+#answer {
+  font-size: 24px;
+  margin: 20px;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.incorrect-job {
+  color: red;
+  font-weight: bold;
+}
+
+.correct-job {
+  color: #00c73c;
+  font-weight: bold;
+}

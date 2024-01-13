@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>tweets in local storage</title>
+    <script type = "module" src = "js/script.js" defer></script>
+    <link rel = "stylesheet" href = "css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id = "program-title">local storage</h1>
+    </header>
+    <main>
+      <section id = "input-section">
+        <label id = "tweet-input-label" for = "tweet-input">tweet:</label><br />
+        <textarea id = "tweet-input" autofocus placeholder = "Introduce el texto de tu tweet..." cols = "30" rows = "2"></textarea><br />
+        <button id = "upload-tweet-button">agregar</button>
+        <button id = "clear-tweets-button" class = "disabled-button" disabled>borrar tweets</button>
+      </section>
+
+      <section id = "tweets-display-section">
+        <h2 id = "my-tweets-title">mis tweets</h2>
+        <div id = "tweet-list-wrapper">
+          <ul id = "tweet-list-element"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h3 id = "incorrect-title" class = "hidden-footer"></h3>
+    </footer>
+  </body>
+</html>

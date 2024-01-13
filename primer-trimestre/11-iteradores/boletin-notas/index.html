@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>boletín de notas</title>
+    <script src = "js/script.js"></script>
+    <link rel = "stylesheet" href = "css/style.css" />
+  </head>
+  <body>
+    <h1>boletín de notas</h1>
+    <input type = "text" id = "student-name" placeholder = "nombre del alumno" autofocus>
+    <button onclick = "showGrades()">mostrar notas</button>
+    <ul id = "grades-list"></ul>
+    <button onclick = "calculateAverage()">calcular media</button>
+    <button onclick = "highestGrade()">nota más alta</button>
+    <button onclick = "checkFailures()">comprobar suspensos</button>
+  </body>
+</html>

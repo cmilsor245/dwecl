@@ -1,0 +1,42 @@
+<!--
+  @file: index.html
+  @author: Christian Millán Soria
+  @created: 16/10/2023
+  @license: MIT
+  @contact: christiaanmillaan1313@gmail.com
+  @info: practica de alarma
+-->
+
+<!DOCTYPE html>
+  <html lang = "en">
+    <head>
+      <meta charset = "utf-8" />
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+      <title>mp3</title>
+      <link rel = "stylesheet" href = "css/style.css" />
+      <script src = "js/script.js"></script>
+    </head>
+    <body>
+      <!-- input del temporizador -->
+      <form>
+        <label for = "temporizador">introduce el tiempo (en segundos) para que suene la alarma: <input id = "temporizador" type = "number" min = "0" required /></label>
+        <input id = "submitTemporizador" type = "submit" value = "submit" />
+      </form>
+
+      <!-- ----------------------------------------------------------------- -->
+
+      <!-- estado de la alarma -->
+      <h1 id = "estado">APAGADA</h1>
+
+      <!-- ----------------------------------------------------------------- -->
+
+      <!-- botón para reiniciar el estado de la alarma -->
+      <button id = "reset">APAGAR ALARMA</button>
+
+      <!-- ------------------------------------------------------------------------------------------------------- -->
+
+      <!-- audio reproducido al encender la alarma -->
+      <br /><br />
+      <audio id = "alarmaAudio" src = "audio/sound.mp3" controls></audio>
+    </body>
+  </html>

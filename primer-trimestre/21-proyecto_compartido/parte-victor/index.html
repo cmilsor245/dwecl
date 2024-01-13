@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0" />
+    <title>boletín de notas conjunto</title>
+    <script src = "js/script.js" defer></script>
+    <link rel = "stylesheet" href = "css/style.css" />
+  </head>
+  <div>
+    <div id="encabezado">
+      Boletín de notas
+    </div>
+
+    <div id="contenedor-botones">
+      <label id = "nombre-alumno-label" for = "nombre-alumno-input">alumno: <input type = "text" id = "nombre-alumno-input" autofocus onfocus = "this.select()" autocomplete = "off" /></label>
+      <button id = "comprobar-boton">comprobar</button>
+
+      <div id = "notas-contenedor">
+        <p id = "notas-texto">notas:</p>
+        <div id = "notas-lista"></div>
+      </div>
+
+      <div class = "contenedor-botones">
+        <div id = "promedio-contenedor">
+          <p id = "promedio-texto">promedio: </p>
+          <button id = "promedio-boton">calcular promedio</button>
+        </div>
+
+        <div id = "nota-mas-alta-contenedor">
+          <p id = "nota-mas-alta-texto">nota mas alta: </p>
+          <button id = "nota-mas-alta-boton">buscar nota más alta</button>
+        </div>
+
+        <div class = "algun-suspenso-contendor">
+          <p id = "algun-suspenso-texto">¿hubo algún suspenso? </p>
+          <button id = "algun-suspenso-boton">buscar algún suspenso</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

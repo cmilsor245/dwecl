@@ -1,0 +1,206 @@
+:root {
+  --page-background: #f5f8fae0;
+  --twitter-blue: #1da1f2;
+  --twitter-dark-blue: #2e5379;
+  --twitter-light-blue: #63ade2;
+  --twitter-black: #14171a;
+  --twitter-white: #f3f3f3;
+  --twitter-red: #eb1527;
+  --twitter-light-red: #ff7e8a;
+  --twitter-dark-red: #8a1519;
+  --twitter-gray: #657786;
+  --twitter-light-gray: #aab8c2;
+  --twitter-dark-gray: #363b41;
+}
+
+@font-face {
+  font-family: "mollen personal use-light";
+  src: url("../fonts/mollen/Mollen Personal Use-Light.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "mollen personal use-bold";
+  src: url("../fonts/mollen/Mollen Personal Use-Bold.otf");
+}
+
+* {
+  font-family: "mollen personal use-light";
+  cursor: default;
+}
+
+::selection {
+  background-color: var(--twitter-black);
+  color: var(--twitter-blue);
+}
+
+body {
+  background-color: var(--page-background);
+}
+
+#program-title {
+  text-align: center;
+  text-transform: capitalize;
+  transition: .17s;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: auto 20%;
+}
+
+#tweet-input-label {
+  font-family: "mollen personal use-bold";
+  text-transform: capitalize;
+}
+
+#tweet-input {
+  max-width: 250px;
+  max-height: 120px;
+  min-width: 200px;
+  min-height: 30px;
+  cursor: text;
+}
+
+#upload-tweet-button {
+  background-color: var(--twitter-blue);
+  color: var(--twitter-white);
+  text-transform: uppercase;
+  width: 100%;
+  height: 36px;
+  border: 2px solid var(--twitter-light-blue);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+#upload-tweet-button:hover {
+  background-color: var(--twitter-dark-blue);
+  font-family: "mollen personal use-bold";
+}
+
+#upload-tweet-button:active {
+  background-color: var(--twitter-light-blue);
+  transform: scale(0.95);
+  font-family: "mollen personal use-bold";
+}
+
+#clear-tweets-button {
+  background-color: var(--twitter-red);
+  color: var(--twitter-white);
+  text-transform: uppercase;
+  width: 100%;
+  height: 36px;
+  border: 2px solid var(--twitter-light-red);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .2s;
+  margin-top: 5px;
+}
+
+#clear-tweets-button:hover {
+  background-color: var(--twitter-dark-red);
+  font-family: "mollen personal use-bold";
+}
+
+#clear-tweets-button:active {
+  background-color: var(--twitter-light-red);
+  transform: scale(0.95);
+  font-family: "mollen personal use-bold";
+}
+
+button.disabled-button[disabled] {
+  cursor: not-allowed !important;
+  background-color: var(--twitter-gray) !important;
+  border: 2px solid var(--twitter-light-gray) !important;
+  opacity: .5;
+}
+
+button.disabled-button[disabled]:hover {
+  background-color: var(--twitter-dark-gray) !important;
+}
+
+button.disabled-button[disabled]:active {
+  background-color: var(--twitter-light-gray) !important;
+}
+
+#tweets-display-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  max-width: 800px;
+  word-wrap: break-word;
+}
+
+#my-tweets-title {
+  text-align: right;
+  text-transform: capitalize;
+  margin-right: 9%;
+  color: var(--twitter-blue);
+  margin: 10px;
+}
+
+ul {
+  padding: 20px;
+  margin: 0;
+  width: 400px;
+}
+
+li {
+  margin-left: 33px;
+  margin-bottom: 13px;
+}
+
+#tweet-li-text {
+  word-wrap: break-word;
+  max-width: 100px;
+}
+
+#trash-icon-svg {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  bottom: 5px;
+  transition: .12s;
+}
+
+#trash-icon-svg * {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  bottom: 5px;
+  transition: .2s;
+}
+
+#trash-icon-svg:hover {
+  transform: scale(1.12);
+}
+
+#trash-icon-svg:active {
+  transform: scale(0.9);
+}
+
+#no-tweets-h3 {
+  color: var(--twitter-red);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+#incorrect-title {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: var(--twitter-red);
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 4px;
+  border: 2px solid var(--twitter-light-red);
+  color: var(--twitter-white);
+  font-family: "mollen personal use-bold";
+  padding: 10px;
+}
+
+.hidden-footer {
+  display: none;
+}
