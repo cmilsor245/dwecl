@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <meta charset = 'utf-8' />
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0' />
+    <title>AVENTURA XPLORA</title>
+    <link rel = 'icon' href = 'assets/icons/favicon.png'>
+
+    <link rel = 'stylesheet' href = 'css/general.css' />
+
+    <link rel = 'stylesheet' href = 'css/header/style.css' />
+    <link rel ='stylesheet' href = 'css/nav/style.css' />
+
+    <link rel = 'stylesheet' href = 'css/slider/style.css' />
+    <link rel = 'stylesheet' href = 'css/search-bar/style.css' />
+    <link rel = 'stylesheet' href = 'css/divider/style.css' />
+    <link rel = 'stylesheet' href = 'css/choose-trip/style.css' />
+    <link rel = 'stylesheet' href = 'css/offers/style.css' />
+    <link rel = 'stylesheet' href = 'css/guides/style.css' />
+
+    <link rel = 'stylesheet' href = 'css/footer/style.css' />
+
+    <!-- --------------------------------------------------------------------------------- -->
+
+    <script src = 'js/slider/script.js' defer></script>
+
+    <script src = 'js/guides/script.js' defer></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header id = 'main-header'>
+      <section class = 'header'>
+        <article class = 'contenido-header'>
+          <div class = 'icono-menu-lateral-header icono-menu-lateral-wrapper hidden'>
+            <img class = 'icono-menu-lateral' src = 'assets/icons/header/menu.svg' alt = 'menu lateral' />
+          </div>
+
+          <div class = 'logo-wrapper'>
+            <a href = 'index.html'>
+              <img class = 'logo' src = 'assets/img/logo/logo.png' alt = 'logo' />
+            </a>
+          </div>
+
+          <div class = 'opciones-header'>
+            <div class = 'opcion-header agencia'>
+              <a href = '#'>
+                <img class = 'icono-header' src = 'assets/icons/header/calendario.png' alt = 'calendario' />
+                <p>Agencia y cita previa</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header ayuda'>
+              <a href = '#'>
+                <img class = 'icono-header' src = 'assets/icons/header/informacion.png' alt = 'ayuda' />
+                <p>Centro de ayuda</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header identificate'>
+              <a href = '#'>
+                <img class = 'icono-header' src = 'assets/icons/header/usuario.png' alt = 'identificate' />
+                <p>Identifícate</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header contacto'>
+              <a href = '#'>
+                <img class = 'icono-header' src = 'assets/icons/header/telefono.svg' alt = 'contacto' />
+                <p>911 22 33 44</p>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- -------------------------------------------------------- -->
+
+      <nav class = 'nav'>
+        <article class = 'contenido-nav'>
+          <div class = 'icono-menu-lateral-wrapper'>
+            <img class = 'icono-menu-lateral-nav' src = 'assets/icons/nav/menu.svg' alt = 'menu lateral' />
+          </div>
+
+          <div class = 'opciones-nav-wrapper'>
+            <ul class = 'lista-opciones-nav'>
+              <li>CARIBE</li><div class = 'barra-divisoria-nav'></div>
+              <li>VUELO + HOTEL</li><div class = 'barra-divisoria-nav'></div>
+              <li>ISLAS</li><div class = 'barra-divisoria-nav'></div>
+              <li>CRUCEROS</li><div class = 'barra-divisoria-nav'></div>
+              <li>OFERTAS</li><div class = 'barra-divisoria-nav'></div>
+              <li>DISNEY</li><div class = 'barra-divisoria-nav'></div>
+              <li>PORTAVENTURA</li>
+            </ul>
+          </div>
+        </article>
+      </nav>
+    </header>
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <!-- main -->
+    <main id = 'main'>
+      <section class = 'slider'>
+        <div class = 'slider-wrapper'>
+          <img class = 'slider-img' src = 'assets/img/slider/imagen1.png' alt = 'imagen1' />
+          <img class = 'slider-img' src = 'assets/img/slider/imagen2.png' alt = 'imagen2' />
+          <img class = 'slider-img' src = 'assets/img/slider/imagen3.png' alt = 'imagen3' />
+          <img class = 'slider-img' src = 'assets/img/slider/imagen4.png' alt = 'imagen4' />
+          <img class = 'slider-img' src = 'assets/img/slider/imagen5.png' alt = 'imagen5' />
+
+          <button class = 'slider-btn slider-btn--left'>
+            <img class = 'slider-icon' src = 'assets/icons/slider/left-arrow.png' alt = 'left arrow' />
+          </button>
+          <button class = 'slider-btn slider-btn--right'>
+            <img class = 'slider-icon' src = 'assets/icons/slider/right-arrow.png' alt = 'right arrow' />
+          </button>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+      <section class = 'search-bar'>
+        <div class = 'search-bar-wrapper'>
+          <form class = 'search-bar-form'>
+            <div class = 'search-bar-input1-wrapper'>
+              <input class = 'search-bar-input search-bar-input1' type = 'text' placeholder = '¿Donde quieres ir?' autocomplete = 'off' onfocus = 'this.select()' />
+            </div>
+            <select class = 'search-bar-input search-bar-input2'>
+              <option value = '' selected disabled>Selecciona una opción</option>
+              <option value = '1'>Opción 1</option>
+              <option value = '2'>Opción 2</option>
+              <option value = '3'>Opción 3</option>
+            </select>
+            <select class = 'search-bar-input search-bar-input3'>
+              <option value = '' selected disabled>Selecciona una opción</option>
+              <option value = '1'>Opción 1</option>
+              <option value = '2'>Opción 2</option>
+              <option value = '3'>Opción 3</option>
+            </select>
+            <button class = 'search-bar-btn'>BUSCAR</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+      <section class = 'divider'>
+        <h1>TU VIAJE COMIENZA AQUÍ</h1>
+      </section>
+
+      <section id = 'content'>
+        <!-- elige tu viaje -->
+        <section class = 'choose-trip'>
+          <article class = 'choose-trip-contents'>
+            <h2>Elige tu viaje</h2>
+            <hr />
+
+            <div class = 'trips'>
+              <div id = 'trip1' class = 'trip'>
+                <div class = 'no-filter-trip-text'>  
+                  <h3>ESCAPADAS</h3>
+                  <div class = 'trip-btn'>
+                    <h4>Disfruta</h4>
+                    <img src = 'assets/icons/choose-trip/arrow.png' alt = 'arrow' />
+                  </div>
+                </div>
+              </div>
+
+              <div id = 'trip2' class = 'trip'>
+                <div class = 'no-filter-trip-text'>  
+                  <h3>SEMANA SANTA</h3>
+                  <div class = 'trip-btn'>
+                    <h4>Descubre</h4>
+                    <img src = 'assets/icons/choose-trip/arrow.png' alt = 'arrow' />
+                  </div>
+                </div>
+              </div>
+
+              <div id = 'trip3' class = 'trip'>
+                <div class = 'no-filter-trip-text'>  
+                  <h3>VIAJES POR ESPAÑA</h3>
+                  <div class = 'trip-btn'>
+                    <h4>Inspírame</h4>
+                    <img src = 'assets/icons/choose-trip/arrow.png' alt = 'arrow' />
+                  </div>
+                </div>
+              </div>
+
+              <div id = 'trip4' class = 'trip'>
+                <div class = 'no-filter-trip-text'>  
+                  <h3>PARQUES TEMÁTICOS</h3>
+                  <div class = 'trip-btn'>
+                    <h4>Diviértete</h4>
+                    <img src = 'assets/icons/choose-trip/arrow.png' alt = 'arrow' />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ------------------------------------------------- -->
+
+        <!-- ofertas de última hora -->
+        <section class = 'offers-section'>
+          <article class = 'offers-section-contents'>
+            <h1>OFERTAS DE ÚLTIMA HORA</h1>
+            <hr />
+
+            <div class = 'offers'>
+              <div id = 'offer1' class = 'offer'>
+                <div class = 'offer--content-over-img'>
+                  <div class = 'offer-icon'>
+                    <img src = 'assets/icons/offers/icon1.png' alt = 'walking person icon' />
+                  </div>
+                  <div class = 'offer-price'>
+                    <div class = 'offer-price-texts'>
+                      <p class = 'offer-price-first-text'>desde</p>
+                      <p class = 'offer-price-amount'>1.850<span class = 'offer-price-currency'>€</span></p>
+                      <p class = 'offer-price-duration'>9 días/6 noches</p>
+                    </div>
+
+                    <div class = 'offer-price-divider'></div>
+
+                    <div class = 'offer-price-info-icon'>
+                      <img src = 'assets/icons/offers/info.png' alt = 'info icon' />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ------------------- -->
+
+                <div class = 'offer--content-under-img'>
+                  <h2>Oferta Tailandia</h2>
+                </div>
+              </div>
+
+              <!-- ----------------------------------------- -->
+
+              <div id = 'offer2' class = 'offer ending-soon-offer'>
+                <div class = 'offer--content-over-img'>
+                  <div class = 'offer-icon'>
+                    <img src = 'assets/icons/offers/icon2.png' alt = 'walking person icon' />
+                  </div>
+                  <div class = 'offer-price'>
+                    <div class = 'offer-price-texts'>
+                      <p class = 'offer-price-first-text'>desde</p>
+                      <p class = 'offer-price-amount'>1.320<span class = 'offer-price-currency'>€</span></p>
+                      <p class = 'offer-price-duration'>9 días/7 noches</p>
+                    </div>
+
+                    <div class = 'offer-price-divider'></div>
+
+                    <div class = 'offer-price-info-icon'>
+                      <img src = 'assets/icons/offers/info.png' alt = 'info icon' />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ------------------- -->
+
+                <div class = 'offer--content-under-img'>
+                  <h2>Caribe al mejor precio</h2>
+                </div>
+              </div>
+
+              <!-- ----------------------------------------- -->
+
+              <div id = 'offer3' class = 'offer'>
+                <div class = 'offer--content-over-img'>
+                  <div class = 'offer-icon'>
+                    <img src = 'assets/icons/offers/icon3.png' alt = 'walking person icon' />
+                  </div>
+                  <div class = 'offer-price'>
+                    <div class = 'offer-price-texts'>
+                      <p class = 'offer-price-first-text'>desde</p>
+                      <p class = 'offer-price-amount'>1.000<span class = 'offer-price-currency'>€</span></p>
+                      <p class = 'offer-price-duration'>8 días/7 noches</p>
+                    </div>
+
+                    <div class = 'offer-price-divider'></div>
+
+                    <div class = 'offer-price-info-icon'>
+                      <img src = 'assets/icons/offers/info.png' alt = 'info icon' />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ------------------- -->
+
+                <div class = 'offer--content-under-img'>
+                  <h2>Mediterráneo</h2>
+                </div>
+              </div>
+
+              <!-- ----------------------------------------- -->
+
+              <div id = 'offer4' class = 'offer'>
+                <div class = 'offer--content-over-img'>
+                  <div class = 'offer-icon'>
+                    <img src = 'assets/icons/offers/icon4.png' alt = 'walking person icon' />
+                  </div>
+                  <div class = 'offer-price'>
+                    <div class = 'offer-price-texts'>
+                      <p class = 'offer-price-first-text'>desde</p>
+                      <p class = 'offer-price-amount'>2.385<span class = 'offer-price-currency'>€</span></p>
+                      <p class = 'offer-price-duration'>12 días/10 noches</p>
+                    </div>
+
+                    <div class = 'offer-price-divider'></div>
+
+                    <div class = 'offer-price-info-icon'>
+                      <img src = 'assets/icons/offers/info.png' alt = 'info icon' />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ------------------- -->
+
+                <div class = 'offer--content-under-img'>
+                  <h2>Conoce Tenerife</h2>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- ------------------------------------------------- -->
+
+        <!-- guías de viaje -->
+        <section class = 'guides-section'>
+          <article class = 'guides-section-contents'>
+            <h2>Guias de viaje</h2>
+            <hr />
+
+            <div class = 'guides'>
+              <div class = 'guide'>
+                <div class = 'guide-overlay guide1-overlay hidden'>
+                  <div class = 'guide-btn'>
+                    <h4>Descubre</h4>
+                  </div>
+                </div>
+
+                <img src = 'assets/img/guides/imagen1.png' alt = 'villa francesa' />
+                <div class = 'guide-text'>
+                  <h2>Visita las Villas Francesas</h2>
+                  <p>La eterna primavera</p>
+                </div>
+              </div>
+
+              <!-- --------------------------------- -->
+
+              <div class = 'guide'>
+                <div class = 'guide-overlay guide2-overlay hidden'>
+                  <div class = 'guide-btn'>
+                    <h4>Descubre</h4>
+                  </div>
+                </div>
+
+                <img src = 'assets/img/guides/imagen2.png' alt = 'costa española' />
+                <div class = 'guide-text'>
+                  <h2>Guía de la Costa Española</h2>
+                  <p>Playas, chiringuitos, puntos de interés...</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <!-- footer -->
+    <footer id = 'main-footer'>
+      <section class = 'footer'>
+        <article class = 'contenido-footer'>
+          <div class = 'textos-footer'>
+            <div class = 'seccion-texto-footer sobre-nosotros'>
+              <h3>Sobre nosotros</h3>
+              <ul>
+                <li>Quiénes somos</li>
+                <li>Sostenibilidad</li>
+                <li>Tarjeta AventuraXplora</li>
+                <li>Trabaja con nosotros</li>
+                <li>AventuraXplora</li>
+                <li>Afiliados</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer planea-tu-viaje'>
+              <h3>Planea tu viaje</h3>
+              <ul>
+                <li>Blog de viajes</li>
+                <li>Guías de viaje</li>
+                <li>Vente de maratón</li>
+                <li>Catálogos</li>
+                <li>Grupos</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer informacion-importante'>
+              <h3>Información importante</h3>
+              <ul>
+                <li>Condiciones generales</li>
+                <li>Política de privacidad</li>
+                <li>Centro de ayuda</li>
+                <li>Viajar a EE.UU.</li>
+                <li>Auto check-in</li>
+                <li>Política de cookies</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer internacional'>
+              <h3>Internacional</h3>
+              <div class = 'footer-internacional-columnas'>
+                <div class = 'footer-internacional-columna-1'>
+                  <ul>
+                    <li>Portugal</li>
+                    <li>Chile</li>
+                    <li>Perú</li>
+                    <li>Panamá</li>
+                    <li>R. Dominicana</li>
+                  </ul>
+                </div>
+
+                <div class = 'footer-internacional-columna-2'>
+                  <ul>
+                    <li>Colombia</li>
+                    <li>Argentina</li>
+                    <li>México</li>
+                    <li>Ecuador</li>
+                    <li>Uruguay</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------- -->
+
+          <div class = 'logo--redes-sociales'>
+            <div class = 'barra-divisoria-footer--segundo-wrapper hidden'></div>
+
+            <div class = 'logo-wrapper-footer'>
+              <a href = 'index.html'>
+                <img class = 'logo' src = 'assets/img/logo/logo.png' alt = 'logo' />
+              </a>
+            </div>
+
+            <div class = 'barra-divisoria-footer--segundo-wrapper hidden'></div>
+
+            <div class = 'redes-sociales'>
+              <h4>Síguenos en:</h4>
+              <div class = 'redes-sociales-iconos'>
+                <div class = 'twitter-wrapper'>
+                  <img class = 'icono-social-footer' src = 'assets/icons/socials/twitter.svg' alt = 'twitter' />
+                </div>
+                <div class = 'instagram-wrapper'>
+                  <img class = 'icono-social-footer' src = 'assets/icons/socials/instagram.svg' alt = 'instagram' />
+                </div>
+                <div class = 'youtube-wrapper'>
+                  <img class = 'icono-social-footer' src = 'assets/icons/socials/youtube.svg' alt = 'youtube' />
+                </div>
+                <div class = 'tiktok-wrapper'>
+                  <img class = 'icono-social-footer' src = 'assets/icons/socials/tiktok.svg' alt = 'tiktok' />
+                </div>
+                <div class = 'facebook-wrapper'>
+                  <img class = 'icono-social-footer' src = 'assets/icons/socials/facebook.svg' alt = 'facebook' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </footer>
+  </body>
+</html>

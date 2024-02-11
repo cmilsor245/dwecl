@@ -14,32 +14,32 @@ function setupSlides() {
   });
 }
 
-function show_slide(index) {
-  const offset = index * 100;
+function showSlide(index) {
+  const OFFSET = index * 100;
   SLIDES.forEach((slide, i) => {
-    slide.style.transform = `translateX(-${offset}%)`;
+    slide.style.transform = `translateX(-${OFFSET}%)`;
   });
 }
 
-function next_slide() {
+function nextSlide() {
   slider_index = (slider_index + 1) % TOTAL_SLIDES;
-  show_slide(slider_index);
+  showSlide(slider_index);
 }
 
-function prev_slide() {
+function prevSlide() {
   slider_index = (slider_index - 1 + TOTAL_SLIDES) % TOTAL_SLIDES;
-  show_slide(slider_index);
+  showSlide(slider_index);
 }
 
 function autoChangeSlides() {
-  next_slide();
+  nextSlide();
   setTimeout(autoChangeSlides, SLIDE_INTERVAL);
 }
 
 /* ------------------------------------------------------------------------------------------------------- */
 
-NEXT_BUTTON.addEventListener('click', next_slide);
-PREV_BUTTON.addEventListener('click', prev_slide);
+NEXT_BUTTON.addEventListener('click', nextSlide);
+PREV_BUTTON.addEventListener('click', prevSlide);
 
 document.addEventListener('keydown', function(event) {
   if (document.activeElement === document.body) {
@@ -50,12 +50,12 @@ document.addEventListener('keydown', function(event) {
   }
 
   if (event.key === 'ArrowRight') {
-    next_slide();
+    nextSlide();
   } else if (event.key === 'ArrowLeft') {
-    prev_slide();
+    prevSlide();
   }
 });
 
 setupSlides();
-show_slide(slider_index);
+showSlide(slider_index);
 autoChangeSlides();
