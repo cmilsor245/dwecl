@@ -47,7 +47,6 @@
 }
 
 .slider-btn:focus {
-  outline: var(--acento) solid 2px;
   transition: none;
 }
 
