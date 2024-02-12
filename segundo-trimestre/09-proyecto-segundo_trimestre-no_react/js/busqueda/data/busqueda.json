@@ -1,0 +1,62 @@
+[
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen1.png",
+    "pais": "Italia",
+    "descripcion": "Sumérgete en las movidas aguas de Aqualand y disfruta en familia de una experiencia inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen2.png",
+    "pais": "Italia",
+    "descripcion": "Maravíllate con su arte, historia y exquisita gastronomía mediterránea"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen3.png",
+    "pais": "Grecia",
+    "descripcion": "Templos antiguos, playas de ensueño y hospitalidad inigualable te esperan"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen4.png",
+    "pais": "Eslovenia",
+    "descripcion": "Paisajes naturales deslumbrantes, castillos encantadores y una cultura cautivadora te aguardan"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen5.png",
+    "pais": "EE.UU",
+    "descripcion": "Desde la majestuosidad del Gran Cañón hasta las luces de Hollywood, vive una experiencia inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen6.png",
+    "pais": "Marruecos",
+    "descripcion": "La arquitectura, los zocos y el desierto tejen una experiencia inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen7.png",
+    "pais": "Egipto",
+    "descripcion": "La grandeza de las pirámides y el misterio del Nilo te cautivarán eternamente"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen8.png",
+    "pais": "Laos",
+    "descripcion": "Templos dorados, naturaleza exuberante y una cultura auténtica te esperan para una experiencia inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen9.png",
+    "pais": "Birmania",
+    "descripcion": "Los templos dorados y la autenticidad cultural te sumergirán en un viaje único e inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen10.png",
+    "pais": "Montenegro",
+    "descripcion": "Paisajes escarpados, costa impresionante y encanto medieval te aguardan para una aventura inolvidable"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen11.png",
+    "pais": "Georgia",
+    "descripcion": "Montañas majestuosas, gastronomía única y hospitalidad incomparable te esperan para una experiencia fascinante"
+  },
+  {
+    "img_src": "../assets/img/productos-busqueda/imagen12.png",
+    "pais": "Irán",
+    "descripcion": "Mosaicos centenarios, mercados bulliciosos y una historia que teje un viaje único e inolvidable"
+  }
+]

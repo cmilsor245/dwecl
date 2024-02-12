@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+  <head>
+    <meta charset = 'utf-8' />
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1.0' />
+    <title>AVENTURA XPLORA</title>
+    <link rel = 'icon' href = '../assets/icons/favicon.png'>
+
+    <link rel = 'stylesheet' href = '../css/general.css' />
+
+    <link rel = 'stylesheet' href = '../css/header/style.css' />
+    <link rel = 'stylesheet' href = '../css/nav/style.css' />
+
+    <link rel = 'stylesheet' href = '../css/search-bar/style.css' />
+    <link rel = 'stylesheet' href = '../css/divider/style.css' />
+    <link rel = 'stylesheet' href = '../css/busqueda/style.css' />
+
+    <link rel = 'stylesheet' href = '../css/footer/style.css' />
+
+    <!-- --------------------------------------------------------------------------------- -->
+
+    <script src = '../js/busqueda/script.js' defer></script>
+  </head>
+  <body>
+    <header class = 'main-header'>
+      <section class = 'header'>
+        <article class = 'contenido-header'>
+          <div class = 'icono-menu-lateral-header icono-menu-lateral-wrapper hidden'>
+            <img class = 'icono-menu-lateral' src = '../assets/icons/header/menu.svg' alt = 'menu lateral' />
+          </div>
+
+          <div class = 'logo-wrapper'>
+            <a href = '../index.html'>
+              <img class = 'logo' src = '../assets/img/logo/logo.png' alt = 'logo' />
+            </a>
+          </div>
+
+          <div class = 'opciones-header'>
+            <div class = 'opcion-header agencia'>
+              <a href = '#'>
+                <img class = 'icono-header' src = '../assets/icons/header/calendario.png' alt = 'calendario' />
+                <p>Agencia y cita previa</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header ayuda'>
+              <a href = '#'>
+                <img class = 'icono-header' src = '../assets/icons/header/informacion.png' alt = 'ayuda' />
+                <p>Centro de ayuda</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header identificate'>
+              <a href = '#'>
+                <img class = 'icono-header' src = '../assets/icons/header/usuario.png' alt = 'identificate' />
+                <p>Identifícate</p>
+              </a>
+            </div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'barra-divisoria-header'></div>
+
+            <!-- -------------------------------- -->
+
+            <div class = 'opcion-header contacto'>
+              <a href = '#'>
+                <img class = 'icono-header' src = '../assets/icons/header/telefono.svg' alt = 'contacto' />
+                <p>911 22 33 44</p>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- -------------------------------------------------------- -->
+
+      <nav class = 'nav'>
+        <article class = 'contenido-nav'>
+          <div class = 'icono-menu-lateral-wrapper'>
+            <img class = 'icono-menu-lateral-nav' src = '../assets/icons/nav/menu.svg' alt = 'menu lateral' />
+          </div>
+
+          <div class = 'opciones-nav-wrapper'>
+            <ul class = 'lista-opciones-nav'>
+              <li>CARIBE</li><div class = 'barra-divisoria-nav'></div>
+              <li>VUELO + HOTEL</li><div class = 'barra-divisoria-nav'></div>
+              <li>ISLAS</li><div class = 'barra-divisoria-nav'></div>
+              <li>CRUCEROS</li><div class = 'barra-divisoria-nav'></div>
+              <li>OFERTAS</li><div class = 'barra-divisoria-nav'></div>
+              <li>DISNEY</li><div class = 'barra-divisoria-nav'></div>
+              <li>PORTAVENTURA</li>
+            </ul>
+          </div>
+        </article>
+      </nav>
+    </header>
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <main class = 'main'>
+      <section class = 'search-bar'>
+        <div class = 'search-bar-wrapper'>
+          <form class = 'search-bar-form'>
+            <div class = 'search-bar-input1-wrapper'>
+              <input class = 'search-bar-input search-bar-input1' type = 'text' placeholder = '¿Donde quieres ir?' autocomplete = 'off' onfocus = 'this.select()' />
+            </div>
+            <select class = 'search-bar-input search-bar-input2'>
+              <option value = '' selected disabled>Selecciona una opción</option>
+              <option value = '1'>Opción 1</option>
+              <option value = '2'>Opción 2</option>
+              <option value = '3'>Opción 3</option>
+            </select>
+            <select class = 'search-bar-input search-bar-input3'>
+              <option value = '' selected disabled>Selecciona una opción</option>
+              <option value = '1'>Opción 1</option>
+              <option value = '2'>Opción 2</option>
+              <option value = '3'>Opción 3</option>
+            </select>
+            <button class = 'search-bar-btn'>BUSCAR</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+      <section class = 'divider'>
+        <h1>PODRÍA INTERESARTE...</h1>
+      </section>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------- -->
+
+      <section class = 'productos-busqueda'>
+        <article class = 'productos-busqueda-contenido'>
+          <!-- <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen1.png' alt = 'Aqualand'>
+            <h1>Aqualand</h1>
+            <p>Sumérgete en las movidas aguas de Aqualand y disfruta en familia de una experiencia inolvidable</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen2.png' alt = 'Italia'>
+            <h1>Italia</h1>
+            <p>Visita las impresionantes estructuras de Italia y maravíllate con su arte, historia y exquisita gastronomía mediterránea</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen3.png' alt = 'Grecia'>
+            <h1>Grecia</h1>
+            <p>Explora la cuna de la civilización occidental en Grecia: templos antiguos, playas de ensueño y una hospitalidad inigualable te esperan</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen4.png' alt = 'Eslovenia'>
+            <h1>Eslovenia</h1>
+            <p>Descubre la joya escondida de Europa en Eslovenia: paisajes naturales deslumbrantes, castillos encantadores y una cultura cautivadora te aguardan</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen5.png' alt = 'Costa Oeste'>
+            <h1>Costa Oeste</h1>
+            <p>Embárcate en un viaje épico por la Costa Oeste de EE. UU.: desde la majestuosidad del Gran Cañón hasta las playas de California</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen6.png' alt = 'Marruecos'>
+            <h1>Marruecos</h1>
+            <p>Sumérgete en un caleidoscopio cultural en Marruecos, donde la arquitectura, los zocos y el desierto tejen una experiencia inolvidable</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen7.png' alt = 'Egipto'>
+            <h1>Egipto</h1>
+            <p>Explora la tierra de los faraones en Egipto, donde la grandeza de las pirámides y el misterio del Nilo te cautivarán</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen8.png' alt = 'Laos'>
+            <h1>Laos</h1>
+            <p>Descubre la serenidad de Laos: templos dorados, naturaleza exuberante y una cultura auténtica</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen9.png' alt = 'Birmania'>
+            <h1>Birmania</h1>
+            <p>Los templos dorados y la autenticidad cultural te sumergirán en un viaje único e inolvidable</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen10.png' alt = 'Montenegro'>
+            <h1>Montenegro</h1>
+            <p>Paisajes escarpados, costa impresionante y encanto medieval te aguardan para una aventura inolvidable</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen11.png' alt = 'Georgia'>
+            <h1>Georgia</h1>
+            <p>Montañas majestuosas, gastronomía única y hospitalidad incomparable te esperan para una experiencia fascinante</p>
+          </article>
+          <article class = 'busqueda-item'>
+            <img src = '../assets/img/productos-busqueda/imagen12.png' alt = 'Irán'>
+            <h1>Irán</h1>
+            <p>Mosaicos centenarios, mercados bulliciosos y una historia que teje un viaje único e inolvidable</p>
+          </article> -->
+        </article>
+      </section>
+    </main>
+
+    <!-- ------------------------------------------------------------------ -->
+
+    <footer class = 'main-footer'>
+      <section class = 'footer'>
+        <article class = 'contenido-footer'>
+          <div class = 'textos-footer'>
+            <div class = 'seccion-texto-footer sobre-nosotros'>
+              <h3>Sobre nosotros</h3>
+              <ul>
+                <li>Quiénes somos</li>
+                <li>Sostenibilidad</li>
+                <li>Tarjeta AventuraXplora</li>
+                <li>Trabaja con nosotros</li>
+                <li>AventuraXplora</li>
+                <li>Afiliados</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer planea-tu-viaje'>
+              <h3>Planea tu viaje</h3>
+              <ul>
+                <li>Blog de viajes</li>
+                <li>Guías de viaje</li>
+                <li>Vente de maratón</li>
+                <li>Catálogos</li>
+                <li>Grupos</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer informacion-importante'>
+              <h3>Información importante</h3>
+              <ul>
+                <li>Condiciones generales</li>
+                <li>Política de privacidad</li>
+                <li>Centro de ayuda</li>
+                <li>Viajar a EE.UU.</li>
+                <li>Auto check-in</li>
+                <li>Política de cookies</li>
+              </ul>
+            </div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'barra-divisoria-footer'></div>
+
+            <!-- -------------------------- -->
+
+            <div class = 'seccion-texto-footer internacional'>
+              <h3>Internacional</h3>
+              <div class = 'footer-internacional-columnas'>
+                <div class = 'footer-internacional-columna-1'>
+                  <ul>
+                    <li>Portugal</li>
+                    <li>Chile</li>
+                    <li>Perú</li>
+                    <li>Panamá</li>
+                    <li>R. Dominicana</li>
+                  </ul>
+                </div>
+
+                <div class = 'footer-internacional-columna-2'>
+                  <ul>
+                    <li>Colombia</li>
+                    <li>Argentina</li>
+                    <li>México</li>
+                    <li>Ecuador</li>
+                    <li>Uruguay</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ------------------------------------------------------- -->
+
+          <div class = 'logo--redes-sociales'>
+            <div class = 'barra-divisoria-footer--segundo-wrapper hidden'></div>
+
+            <div class = 'logo-wrapper-footer'>
+              <a href = '../index.html'>
+                <img class = 'logo' src = '../assets/img/logo/logo.png' alt = 'logo' />
+              </a>
+            </div>
+
+            <div class = 'barra-divisoria-footer--segundo-wrapper hidden'></div>
+
+            <div class = 'redes-sociales'>
+              <h4>Síguenos en:</h4>
+              <div class = 'redes-sociales-iconos'>
+                <div class = 'twitter-wrapper'>
+                  <img class = 'icono-social-footer' src = '../assets/icons/socials/twitter.svg' alt = 'twitter' />
+                </div>
+                <div class = 'instagram-wrapper'>
+                  <img class = 'icono-social-footer' src = '../assets/icons/socials/instagram.svg' alt = 'instagram' />
+                </div>
+                <div class = 'youtube-wrapper'>
+                  <img class = 'icono-social-footer' src = '../assets/icons/socials/youtube.svg' alt = 'youtube' />
+                </div>
+                <div class = 'tiktok-wrapper'>
+                  <img class = 'icono-social-footer' src = '../assets/icons/socials/tiktok.svg' alt = 'tiktok' />
+                </div>
+                <div class = 'facebook-wrapper'>
+                  <img class = 'icono-social-footer' src = '../assets/icons/socials/facebook.svg' alt = 'facebook' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </footer>
+  </body>
+</html>
